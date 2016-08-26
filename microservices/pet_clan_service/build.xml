@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<project name="pet_utilities_common" default="jar">
+<project name="pet_clan_service" default="jar">
 
 	<basename property="my.project.name" file="${basedir}" />
 	<property name="jar.name" value="${my.project.name}.jar" />
