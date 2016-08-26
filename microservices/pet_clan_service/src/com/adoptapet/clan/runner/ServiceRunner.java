@@ -22,7 +22,7 @@ import com.adoptapet.clan.constants.ApplicationConstants;
 import com.adoptapet.utilities.utils.PropertyUtil;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.adoptapet.clan.configuration", "com.adoptapet.clan.controller", "com.adoptapet.clan.service" })
+@ComponentScan(basePackages = { "com.adoptapet.clan.controller", "com.adoptapet.clan.service" })
 public class ServiceRunner {
 
     public static void main(String[] args) {
