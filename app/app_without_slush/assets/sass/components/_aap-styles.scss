@@ -18,19 +18,14 @@
   -ms-background-size: $bg-size;
   background-size: $bg-size;
 }
-html {
-  background: url(../dog.jpg) no-repeat center center fixed;
+body {
+  background: url(../images/dog.jpg) no-repeat center center fixed;
   @include border-radius(cover);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.aap-head-nav {
-  Background-color: #6fcbf0;
-  clear: both;
-  height: 10%;
-  width: 100%;
+  background-color:#f3e1cd;
 }
 .logo {
   background: rgba(255,255,255,0.47);
@@ -44,22 +39,8 @@ html {
     width: 306px;
   }
 }
-.sp-search-panel {
-  background: rgba(240,166,103,0.44);
-  float: right;
-  margin: 0 5%;
-  padding: 2%;
-  width: 40%;
-  @include border-radius(10px);
-  @include box-shadow(0 0 8px 1px rgba(255,255,255,0.37));
-}
-.sp-head {
-  color: $primary-font-color;
-  font-family: $primary-font;
-  font-size: 2.5em;
-}
 .sp-form {
-  padding: 5% 0;
+  padding: 5% 0 0;
   input {
     padding: 0 0 0 1%;
   }
@@ -72,22 +53,46 @@ html {
     width: 50%;
     @include border-radius(5px);
   }
+  label {
+  width: 76px !important;
+  font-weight:normal;
+  }
+  .sp-form-menu {
+  padding: 0 0 2% 0;
+  }
 }
 .sp-form-nav {
+  background: rgba(255,221,178,0.56);
   color: $primary-font-color;
   cursor: pointer;
   font-weight:bold;
   font-family: $primary-font;
   font-size: 1.2em;
-  margin: 0 1% 0 0;
+  margin: 0 2% 0 0;
   padding: 1% 2%;
   @include border-radius(5px);
-}
-.sp-form-nav:hover {
-  background: rgba(255,221,178,0.56);
-}
-.sp-form-nav.active {
+  &:hover {
   background: $primary-color;
+  }
+  &.active {
+  background: $primary-color;
+  }
+}
+.sp-search-panel {
+  background: rgba(240,166,103,0.44);
+  float: right;
+  margin: 0 5%;
+  padding: 2%;
+  width: 40%;
+  @include border-radius(10px);
+  @include box-shadow(0 0 8px 1px rgba(255,255,255,0.37));
+  .sp-head {
+  color: $primary-font-color;
+  font-family: $primary-font;
+  font-size: 2.5em;
+  h1 {
+  margin: 1% 0 0;}
+  }
 }
 .sp-search-button {
   background: $primary-color;
@@ -102,33 +107,15 @@ html {
   width: 15%;
   @include border-radius(3px);
 }
-.aap-container {
-  background: url(../images/dog.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.aap-head-nav {
-  Background-color: #6fcbf0;
-  clear: both;
-  height: 10%;
-  width: 100%;
-}
-.sp-form-menu {
-  padding: 0 0 2% 0;
-}
 .sp-search-type {
   font-size: 1.2em;
   color: $primary-font-color;
   width: 66px !important;
 }
-.sp-form label {
-  width: 76px !important;
-  font-weight:normal;
-}
-.sp-form-search-section {
-  padding: 0 0 0 2%;
-}
 .ui-widget {
-font-family: $primary-font !important;}
+  font-family: $primary-font !important;
+}
+.ui-widget-content {
+  max-height: 200px !important;
+  overflow-y:auto;
+}

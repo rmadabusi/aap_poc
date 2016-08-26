@@ -1,4 +1,4 @@
-html {
+body {
   background: url(../images/dog.jpg) no-repeat center center fixed;
   -webkit-border-radius: cover;
   -moz-border-radius: cover;
@@ -7,13 +7,8 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
-
-.aap-head-nav {
-  Background-color: #6fcbf0;
-  clear: both;
-  height: 10%;
-  width: 100%; }
+  background-size: cover;
+  background-color: #f3e1cd; }
 
 .logo {
   background: rgba(255, 255, 255, 0.47);
@@ -32,6 +27,45 @@ html {
     height: auto;
     width: 306px; }
 
+.sp-form {
+  padding: 5% 0 0; }
+  .sp-form input {
+    padding: 0 0 0 1%; }
+  .sp-form input, .sp-form select {
+    background: rgba(255, 255, 255, 0.68);
+    border: 0;
+    font-family: helvetica;
+    height: 25px;
+    margin: 10px 0;
+    width: 50%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  .sp-form label {
+    width: 76px !important;
+    font-weight: normal; }
+  .sp-form .sp-form-menu {
+    padding: 0 0 2% 0; }
+
+.sp-form-nav {
+  background: rgba(255, 221, 178, 0.56);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: helvetica;
+  font-size: 1.2em;
+  margin: 0 2% 0 0;
+  padding: 1% 2%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+  .sp-form-nav:hover {
+    background: #e39028; }
+  .sp-form-nav.active {
+    background: #e39028; }
+
 .sp-search-panel {
   background: rgba(240, 166, 103, 0.44);
   float: right;
@@ -46,46 +80,12 @@ html {
   -moz-box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.37);
   -ms-box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.37);
   box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.37); }
-
-.sp-head {
-  color: #ffffff;
-  font-family: helvetica;
-  font-size: 2.5em; }
-
-.sp-form {
-  padding: 5% 0; }
-  .sp-form input {
-    padding: 0 0 0 1%; }
-  .sp-form input, .sp-form select {
-    background: rgba(255, 255, 255, 0.68);
-    border: 0;
+  .sp-search-panel .sp-head {
+    color: #ffffff;
     font-family: helvetica;
-    height: 25px;
-    margin: 10px 0;
-    width: 50%;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px; }
-
-.sp-form-nav {
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: helvetica;
-  font-size: 1.2em;
-  margin: 0 1% 0 0;
-  padding: 1% 2%;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px; }
-
-.sp-form-nav:hover {
-  background: rgba(255, 221, 178, 0.56); }
-
-.sp-form-nav.active {
-  background: #e39028; }
+    font-size: 2.5em; }
+    .sp-search-panel .sp-head h1 {
+      margin: 1% 0 0; }
 
 .sp-search-button {
   background: #e39028;
@@ -103,49 +103,42 @@ html {
   -ms-border-radius: 3px;
   border-radius: 3px; }
 
-.aap-container {
-  background: url(../images/dog.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-.aap-head-nav {
-  Background-color: #6fcbf0;
-  clear: both;
-  height: 10%;
-  width: 100%; }
-
-.sp-form-menu {
-  padding: 0 0 2% 0; }
-
 .sp-search-type {
   font-size: 1.2em;
   color: #ffffff;
   width: 66px !important; }
 
-.sp-form label {
-  width: 76px !important;
-  font-weight: normal; }
-
-.sp-form-search-section {
-  padding: 0 0 0 2%; }
-
 .ui-widget {
   font-family: helvetica !important; }
 
-@media screen and (max-width: 420px) {
-  .sp-form input, .sp-form select {
-    width: 100% !important;
-    margin: 10px 0 !important; }
+.ui-widget-content {
+  max-height: 200px !important;
+  overflow-y: auto; }
 
+@media screen and (max-width: 1250px) {
   .sp-search-button {
-    margin-left: 32% !important;
-    width: 32% !important; } }
+    width: 22%; } }
+@media screen and (max-width: 1020px) {
+  .sp-search-button {
+    width: 24%; } }
+@media screen and (min-width: 801px) {
+  .sp-search-panel {
+    width: 50%; } }
+@media screen and (max-width: 800px) {
+  .sp-search-panel {
+    margin: 15% 6%;
+    width: 94%; }
+
+  .logo {
+    margin: 2% 0;
+    width: 29%; }
+
+  .sp-form input {
+    margin: 12px 0 !important; } }
 @media screen and (max-width: 640px) {
   .logo {
-    margin: 5% 0;
-    width: 42%; }
+    margin: 3% 0;
+    width: 30%; }
 
   .aap-container {
     padding: 0; }
@@ -161,20 +154,21 @@ html {
   .sp-search-button {
     width: 35%;
     margin: 5% 35%; } }
-@media screen and (max-width: 800px) {
-  .sp-search-panel {
-    margin: 15% 6%;
-    width: 94%; }
+@media screen and (max-width: 420px) {
+  .sp-form input, .sp-form select {
+    width: 100% !important;
+    margin: 10px 0 !important; }
 
-  .logo {
-    margin: 2% 0;
-    width: 42%; }
+  .sp-search-button {
+    margin-left: 32% !important;
+    width: 32% !important; }
 
-  .sp-form input {
-    margin: 12px 0 !important; } }
-@media screen and (min-width: 801px) {
-  .sp-search-panel {
-    width: 50%; } }
+  .sp-head {
+    font-size: 1.8em; }
+
+  .ui-widget-content {
+    max-height: 140px !important;
+    overflow-y: auto; } }
 /*! jQuery UI - v1.10.4 - 2016-08-25
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.autocomplete.css, jquery.ui.menu.css, jquery.ui.theme.css
