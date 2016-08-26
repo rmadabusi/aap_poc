@@ -69,9 +69,8 @@ body {
 .sp-search-panel {
   background: rgba(240, 166, 103, 0.44);
   float: right;
-  margin: 5% 0;
+  margin: 4% 1% 0 0;
   padding: 2%;
-  /* width: 40%; */
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -121,13 +120,9 @@ body {
 @media screen and (max-width: 1020px) {
   .sp-search-button {
     width: 24%; } }
-@media screen and (min-width: 801px) {
-  .sp-search-panel {
-    /* width: 50%; */ } }
 @media screen and (max-width: 800px) {
   .sp-search-panel {
-    margin: 12% 0%;
-    /* width: 94%; */ }
+    margin: 12% 0%; }
 
   .logo {
     margin: 2% 0;
@@ -144,8 +139,7 @@ body {
     padding: 0; }
 
   .sp-search-panel {
-    margin: 15% 1%;
-    /* width: 100%; */ }
+    margin: 15% 1%; }
 
   .sp-form input, .sp-form select {
     margin: 10px 0;

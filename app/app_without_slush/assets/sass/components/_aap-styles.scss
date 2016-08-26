@@ -29,7 +29,7 @@ body {
 }
 .logo {
   background: rgba(255,255,255,0.47);
-  margin: 2%;
+  margin: 2% 0;
   padding: 1%;
   width: 23%;
   @include border-radius(10px);
@@ -81,9 +81,8 @@ body {
 .sp-search-panel {
   background: rgba(240,166,103,0.44);
   float: right;
-  margin: 0 5%;
+  margin: 4% 1% 0 0;
   padding: 2%;
-  width: 40%;
   @include border-radius(10px);
   @include box-shadow(0 0 8px 1px rgba(255,255,255,0.37));
   .sp-head {
