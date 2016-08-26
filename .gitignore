@@ -1,2 +1,3 @@
 .idea
 microservices\libs\.project
+microservices\libs\pet*
