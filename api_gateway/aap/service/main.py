@@ -3,21 +3,68 @@ from flask import Flask, request
 import json
 from api_gateway.aap.service.implementations.main_services import get_status, get_family_details, get_colors_details, pet_usage_metrics
 from urllib import unquote
+from flasgger import Swagger
 
 __author__ = "Treselle"
 
 app = Flask(__name__)
-
+Swagger(app)
 
 #Get all service status
 @app.route("/status", methods=["GET"])
 def api_status():
+    """
+    User API
+    This resource returns status for the corresponding services
+    ---
+    tags:
+      - status
+    responses:
+      200:
+        description: status for the corresponding services
+        schema:
+          id: user_response
+          properties:
+            status:
+              schema:
+                properties:
+                  some_key:
+                    type: int
+                    description: The username
+                    default: some_values
+    """
     result = get_status()
     return json.dumps(result)
 
 #For getting family details based on Pet family ids
 @app.route('/pets/families/<id>', methods=["GET"])
 def api_family_details(id):
+    """
+    User API
+    This resource returns basic pet family information
+    ---
+    tags:
+      - basic pet utilities
+    parameters:
+      - name: id
+        in: path
+        description: The value corresponding to a primary_family_id or secondary_family_id of a pet
+        type: string
+        required: true
+    responses:
+      200:
+        description: Because it is possible for multiple families to be returned from this API Query, the JSON response will always return an Array of Objects, even if there is only one Object returned
+        schema:
+          id: user_response
+          properties:
+            response:
+              schema:
+                properties:
+                  some_key:
+                    type: int
+                    description: Unexpected error
+                    default: some_values
+    """
     result = get_family_details(id)
     return result
 
