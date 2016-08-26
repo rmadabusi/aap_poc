@@ -1,5 +1,5 @@
 <div class="sp-search-panel">
-  <span class="sp-head">Adopt the perfect pet</span>
+  <span class="sp-head"><h1>Adopt the perfect pet</h1></span>
   <div style="clear:both;"></div>
   <div class="sp-form">
 
@@ -9,29 +9,27 @@
     </div>
 
     <!-- Search Fields -->
-    <div class="sp-form-search-section">
-      <div ng-if="(!!searchTabs[3]['isActive'])">
-        <label for="petType" class="sp-search-type">Pet Type: </label>
-        <select class="select-form-sp" ng-model="searchFields.petType" id="petType" name="petType" ng-change="selectPetType()">
-          <option value="" selected="selected">Select Pet Type</option>
-          <option ng-repeat="petType in petTypeDetails" ng-value="petType.clan_id">{{petType.clan_name}}</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="petFamily" class="sp-search-type">Breed: </label>
-        <input id="petFamily" name="petFamily" ng-model="searchFields.petFamily" ng-disabled="(!!searchTabs[3]['isActive'] && searchFields.petType === '')" placeholder="" />
-      </div>
-
-      <div>
-        <label for="petColor" class="sp-search-type">Color: </label>
-        <select class="select-form-sp" ng-model="searchFields.petColor" id="petColor" name="petColor" ng-disabled="(!!searchTabs[3]['isActive'] && searchFields.petType === '')">
-          <option value="" selected="selected">ANY</option>
-          <option ng-repeat="colorDetail in colorDetails" ng-value="colorDetail.name">{{colorDetail.name}}</option>
-        </select>
-      </div>
-      <div class="sp-search-button" ng-click="searchForPet()">Search</div>
+    <div ng-if="(!!searchTabs[3]['isActive'])">
+      <label for="petType" class="sp-search-type">Pet Type: </label>
+      <select class="select-form-sp" ng-model="searchFields.petType" id="petType" name="petType" ng-change="selectPetType()">
+        <option value="" selected="selected">Select Pet Type</option>
+        <option ng-repeat="petType in petTypeDetails" ng-value="petType.clan_id">{{petType.clan_name}}</option>
+      </select>
     </div>
+
+    <div>
+      <label for="petFamily" class="sp-search-type">Breed: </label>
+      <input id="petFamily" name="petFamily" ng-model="searchFields.petFamily" ng-disabled="(!!searchTabs[3]['isActive'] && searchFields.petType === '')" placeholder="" />
+    </div>
+
+    <div>
+      <label for="petColor" class="sp-search-type">Color: </label>
+      <select class="select-form-sp" ng-model="searchFields.petColor" id="petColor" name="petColor" ng-disabled="(!!searchTabs[3]['isActive'] && searchFields.petType === '')">
+        <option value="" selected="selected">ANY</option>
+        <option ng-repeat="colorDetail in colorDetails" ng-value="colorDetail.name">{{colorDetail.name}}</option>
+      </select>
+    </div>
+    <div class="sp-search-button" ng-click="searchForPet()">Search</div>
 
   </div>
 </div>
