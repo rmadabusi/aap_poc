@@ -1,0 +1,9 @@
+clan_id,clan_name,clan_name_plural,active_p,tech_name,family_label,clan_name_pretty,clan_name_plural_pretty
+1,dog,dogs,t,dog,breed,Dog,Dogs
+2,cat,cats,t,cat,breed,Cat,Cats
+3,rabbit,rabbits,t,rabbit,breed,Rabbit,Rabbits
+5,bird,birds,t,bird,breed,Bird,Birds
+6,horse,horses,t,horse,breed,Horse,Horses
+4,small animal,small animals,t,small_animal,species,Small Animal,Small Animals
+7,"reptile, amphibian, and/or fish","reptiles, amphibians, and/or fish",t,reptile,species,"Reptile, Amphibian, and/or Fish","Reptiles, Amphibians, and/or Fish"
+8,farm-type animal,farm-type animals,t,farm_animal,species,Farm-Type Animal,Farm-Type Animals

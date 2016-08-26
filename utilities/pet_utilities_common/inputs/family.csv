@@ -1,0 +1,438 @@
+family_id,clan_id,family_name,family_name_search,active_p
+1187,1,Löwchen,Löwchen,t
+1307,6,Donkey/Mule/Burro/Hinny,Donkey/Mule/Burro/Hinny,t
+977,2,Maine Coon,Maine Coon,t
+1370,6,Pony - Chincoteague,Pony - Chincoteague,t
+1165,1,Bolognese,Bolognese,t
+967,2,Abyssinian,Abyssinian,t
+968,2,American Shorthair,American Shorthair,t
+969,2,Balinese,Balinese,t
+970,2,Bengal,Bengal,t
+971,2,Birman,Birman,t
+972,2,Bombay,Bombay,t
+973,2,British Shorthair,British Shorthair,t
+974,2,Burmese,Burmese,t
+1166,1,Polish Lowland Sheepdog,Polish Lowland Sheepdog,t
+976,2,Himalayan,Himalayan,t
+1167,1,American Hairless Terrier,American Hairless Terrier,t
+979,2,Norwegian Forest Cat,Norwegian Forest Cat,t
+980,2,Ocicat,Ocicat,t
+981,2,Persian,Persian,t
+982,2,Ragdoll,Ragdoll,t
+983,2,Russian Blue,Russian Blue,t
+984,2,Siamese,Siamese,t
+985,2,Snowshoe,Snowshoe,t
+986,2,Turkish Van,Turkish Van,t
+187,1,Affenpinscher,Affenpinscher,t
+1,1,Afghan Hound,Afghan Hound,t
+2,1,Airedale Terrier,Airedale Terrier,t
+800,1,Akbash,Akbash,t
+3,1,Akita,Akita,t
+4,1,Alaskan Malamute,Alaskan Malamute,t
+361,1,American Bulldog,American Bulldog,t
+801,1,American Pit Bull Terrier,American Pit Bull Terrier,t
+7,1,Anatolian Shepherd,Anatolian Shepherd,t
+8,1,Australian Cattle Dog,Australian Cattle Dog,t
+9,1,Australian Kelpie,Australian Kelpie,t
+10,1,Australian Shepherd,Australian Shepherd,t
+802,1,Australian Terrier,Australian Terrier,t
+12,1,Basenji,Basenji,t
+13,1,Basset Hound,Basset Hound,t
+14,1,Beagle,Beagle,t
+15,1,Bearded Collie,Bearded Collie,t
+803,1,Beauceron,Beauceron,t
+189,1,Bedlington Terrier,Bedlington Terrier,t
+27,1,Brittany,Brittany,t
+17,1,Bernese Mountain Dog,Bernese Mountain Dog,t
+18,1,Bichon Frise,Bichon Frise,t
+19,1,Black and Tan Coonhound,Black and Tan Coonhound,t
+804,1,Black Mouth Cur,Black Mouth Cur,t
+20,1,Bloodhound,Bloodhound,t
+193,1,Bluetick Coonhound,Bluetick Coonhound,t
+21,1,Border Collie,Border Collie,t
+194,1,Border Terrier,Border Terrier,t
+22,1,Borzoi,Borzoi,t
+23,1,Boston Terrier,Boston Terrier,t
+25,1,Boxer,Boxer,t
+26,1,Briard,Briard,t
+28,1,Bull Terrier,Bull Terrier,t
+30,1,Bullmastiff,Bullmastiff,t
+31,1,Cairn Terrier,Cairn Terrier,t
+381,1,Canaan Dog,Canaan Dog,t
+805,1,Carolina Dog,Carolina Dog,t
+33,1,Catahoula Leopard Dog,Catahoula Leopard Dog,t
+34,1,Cavalier King Charles Spaniel,Cavalier King Charles Spaniel,t
+35,1,Chesapeake Bay Retriever,Chesapeake Bay Retriever,t
+36,1,Chihuahua,Chihuahua,t
+38,1,Chow Chow,Chow Chow,t
+196,1,Clumber Spaniel,Clumber Spaniel,t
+39,1,Cockapoo,Cockapoo,t
+40,1,Cocker Spaniel,Cocker Spaniel,t
+41,1,Collie,Collie,t
+230,1,Corgi,Corgi,t
+521,1,Coton de Tulear,Coton de Tulear,t
+44,1,Dachshund,Dachshund,t
+45,1,Dalmatian,Dalmatian,t
+199,1,Dandie Dinmont Terrier,Dandie Dinmont Terrier,t
+46,1,Doberman Pinscher,Doberman Pinscher,t
+621,1,Dogo Argentino,Dogo Argentino,t
+242,1,Dogue de Bordeaux,Dogue de Bordeaux,t
+47,1,Dutch Shepherd,Dutch Shepherd,t
+29,1,English Bulldog,English Bulldog,t
+49,1,English Setter,English Setter,t
+641,1,English Shepherd,English Shepherd,t
+51,1,English Springer Spaniel,English Springer Spaniel,t
+52,1,English Toy Spaniel,English Toy Spaniel,t
+808,1,Entlebucher,Entlebucher,t
+201,1,Field Spaniel,Field Spaniel,t
+810,1,Fila Brasileiro,Fila Brasileiro,t
+811,1,Finnish Lapphund,Finnish Lapphund,t
+54,1,Finnish Spitz,Finnish Spitz,t
+202,1,Flat-Coated Retriever,Flat-Coated Retriever,t
+812,1,Fox Terrier (Smooth),Fox Terrier (Smooth),t
+813,1,Fox Terrier (Toy),Fox Terrier (Toy),t
+56,1,Foxhound,Foxhound,t
+806,1,Coonhound (Unknown Type),,t
+203,1,French Bulldog,French Bulldog,t
+814,1,German Pinscher,German Pinscher,t
+58,1,German Shorthaired Pointer,German Shorthaired Pointer,t
+204,1,German Wirehaired Pointer,German Wirehaired Pointer,t
+815,1,Glen of Imaal Terrier,Glen of Imaal Terrier,t
+60,1,Golden Retriever,Golden Retriever,t
+61,1,Gordon Setter,Gordon Setter,t
+62,1,Great Dane,Great Dane,t
+63,1,Great Pyrenees,Great Pyrenees,t
+205,1,Greater Swiss Mountain Dog,Greater Swiss Mountain Dog,t
+64,1,Greyhound,Greyhound,t
+661,1,Halden Hound (Haldenstrover),Halden Hound (Haldenstrover),t
+206,1,Harrier,Harrier,t
+501,1,Havanese,Havanese,t
+816,1,Hovawart,Hovawart,t
+817,1,Husky,Husky,t
+281,1,Ibizan Hound,Ibizan Hound,t
+67,1,Irish Setter,Irish Setter,t
+207,1,Irish Terrier,Irish Terrier,t
+208,1,Irish Water Spaniel,Irish Water Spaniel,t
+68,1,Irish Wolfhound,Irish Wolfhound,t
+69,1,Italian Greyhound,Italian Greyhound,t
+818,1,Italian Spinone,Italian Spinone,t
+70,1,Jack Russell Terrier,Jack Russell Terrier,t
+71,1,Japanese Chin,Japanese Chin,t
+72,1,Jindo,Jindo,t
+819,1,Kai Dog,Kai Dog,t
+820,1,Karelian Bear Dog,Karelian Bear Dog,t
+73,1,Keeshond,Keeshond,t
+209,1,Kerry Blue Terrier,Kerry Blue Terrier,t
+821,1,Kishu,Kishu,t
+74,1,Kuvasz,Kuvasz,t
+822,1,Kyi Leo,Kyi Leo,t
+211,1,Lakeland Terrier,Lakeland Terrier,t
+826,1,Lancashire Heeler,Lancashire Heeler,t
+827,1,Leonberger,Leonberger,t
+76,1,Lhasa Apso,Lhasa Apso,t
+77,1,Maltese,Maltese,t
+78,1,Manchester Terrier,Manchester Terrier,t
+828,1,Maremma Sheepdog,Maremma Sheepdog,t
+200,1,Mastiff,Mastiff,t
+80,1,Miniature Pinscher,Miniature Pinscher,t
+829,1,Mountain Cur,Mountain Cur,t
+83,1,Neapolitan Mastiff,Neapolitan Mastiff,t
+214,1,Norfolk Terrier,Norfolk Terrier,t
+831,1,Norwegian Buhund,Norwegian Buhund,t
+85,1,Norwegian Elkhound,Norwegian Elkhound,t
+215,1,Norwich Terrier,Norwich Terrier,t
+832,1,Nova Scotia Duck-Tolling Retriever,Nova Scotia Duck-Tolling Retriever,t
+87,1,Otterhound,Otterhound,t
+88,1,Papillon,Papillon,t
+833,1,Patterdale Terrier (Fell Terrier),Patterdale Terrier (Fell Terrier),t
+89,1,Pekingese,Pekingese,t
+90,1,Pharaoh Hound,Pharaoh Hound,t
+581,1,Plott Hound,Plott Hound,t
+834,1,Podengo Portugueso,Podengo Portugueso,t
+92,1,Pointer,Pointer,t
+93,1,Pomeranian,Pomeranian,t
+84,1,Newfoundland,Newfoundland,t
+213,1,Poodle (Miniature),Poodle (Miniature),t
+94,1,Poodle (Standard),Poodle (Standard),t
+226,1,Poodle (Toy or Tea Cup),Poodle (Toy or Tea Cup),t
+96,1,Pug,Pug,t
+835,1,Pumi,Pumi,t
+218,1,Rat Terrier,Rat Terrier,t
+664,1,Redbone Coonhound,Redbone Coonhound,t
+98,1,Rhodesian Ridgeback,Rhodesian Ridgeback,t
+99,1,Rottweiler,Rottweiler,t
+100,1,St. Bernard,St. Bernard,t
+101,1,Saluki,Saluki,t
+102,1,Samoyed,Samoyed,t
+662,1,Schiller Hound,Schiller Hound,t
+103,1,Schipperke,Schipperke,t
+836,1,Schnauzer (Giant),Schnauzer (Giant),t
+837,1,Schnauzer (Miniature),Schnauzer (Miniature),t
+104,1,Schnauzer (Standard),Schnauzer (Standard),t
+219,1,Scottish Deerhound,Scottish Deerhound,t
+105,1,"Scottie, Scottish Terrier","Scottie, Scottish Terrier",t
+220,1,Sealyham Terrier,Sealyham Terrier,t
+107,1,Shar Pei,Shar Pei,t
+108,1,"Sheltie, Shetland Sheepdog","Sheltie, Shetland Sheepdog",t
+110,1,Shiba Inu,Shiba Inu,t
+111,1,Shih Tzu,Shih Tzu,t
+113,1,Silky Terrier,Silky Terrier,t
+221,1,Skye Terrier,Skye Terrier,t
+841,1,Sloughi,Sloughi,t
+222,1,Sussex Spaniel,Sussex Spaniel,t
+846,1,Swedish Vallhund,Swedish Vallhund,t
+561,1,Thai Ridgeback,Thai Ridgeback,t
+224,1,Tibetan Mastiff,Tibetan Mastiff,t
+225,1,Tibetan Spaniel,Tibetan Spaniel,t
+118,1,Tibetan Terrier,Tibetan Terrier,t
+848,1,Tosa Inu,Tosa Inu,t
+119,1,Treeing Walker Coonhound,Treeing Walker Coonhound,t
+120,1,Vizsla,Vizsla,t
+121,1,Weimaraner,Weimaraner,t
+849,1,Welsh Springer Spaniel,Welsh Springer Spaniel,t
+227,1,Welsh Terrier,Welsh Terrier,t
+123,1,"Westie, West Highland White Terrier","Westie, West Highland White Terrier",t
+124,1,Wheaten Terrier,Wheaten Terrier,t
+125,1,Whippet,Whippet,t
+212,1,Xoloitzcuintle/Mexican Hairless,Xoloitzcuintle/Mexican Hairless,t
+244,1,"Yorkie, Yorkshire Terrier","Yorkie, Yorkshire Terrier",t
+42,1,Coonhound,Coonhound,t
+195,1,Brussels Griffon,Brussels Griffon,t
+310,1,Feist,Feist,t
+1199,3,American,American,t
+1201,3,American Fuzzy Lop,American Fuzzy Lop,t
+1202,3,American Sable,American Sable,t
+1203,3,Belgian Hare,Belgian Hare,t
+1204,3,Beveren,Beveren,t
+1205,3,Blanc de Hotot,Blanc de Hotot,t
+1206,3,Britannia Petite,Britannia Petite,t
+1207,3,Californian,Californian,t
+1208,3,Champagne D'Argent,Champagne D'Argent,t
+1209,3,Checkered Giant,Checkered Giant,t
+1210,3,Cinnamon,Cinnamon,t
+1211,3,Creme D'Argent,Creme D'Argent,t
+1212,3,Dutch,Dutch,t
+1213,3,Dwarf Hotot,Dwarf Hotot,t
+1368,1,Blue Lacy/Texas Lacy,Blue Lacy/Texas Lacy,t
+1216,3,English Spot,English Spot,t
+1217,3,Flemish Giant,Flemish Giant,t
+1218,3,Florida White,Florida White,t
+1223,3,Harlequin,Harlequin,t
+1224,3,Havana,Havana,t
+1225,3,Himalayan,Himalayan,t
+1227,3,Jersey Wooly,Jersey Wooly,t
+5,1,American Eskimo Dog,American Eskimo Dog,t
+601,1,Boykin Spaniel,Boykin Spaniel,t
+210,1,Komondor,Komondor,t
+216,1,Petit Basset Griffon Vendeen,Petit Basset Griffon Vendeen,t
+663,1,Hound (Unknown Type),,t
+198,1,Retriever (Unknown Type),,t
+838,1,Setter (Unknown Type),,t
+840,1,Shepherd (Unknown Type),,t
+842,1,Spaniel (Unknown Type),,t
+843,1,"Spitz (Unknown Type, Small)",,t
+844,1,"Spitz (Unknown Type, Medium)",,t
+845,1,"Spitz (Unknown Type, Large)",,t
+847,1,"Terrier (Unknown Type, Small)",,t
+1170,1,Labradoodle,Labradoodle,t
+830,1,Munsterlander,Munsterlander,t
+57,1,German Shepherd Dog,German Shepherd Dog,t
+1119,2,American Bobtail,American Bobtail,t
+1120,2,American Curl,American Curl,t
+1122,2,American Wirehair,American Wirehair,t
+1123,2,Chartreux,Chartreux,t
+1124,2,Colorpoint Shorthair,Colorpoint Shorthair,t
+1125,2,Cornish Rex,Cornish Rex,t
+1126,2,Devon Rex,Devon Rex,t
+1127,2,Domestic Longhair,Domestic Longhair,t
+1128,2,Domestic Mediumhair,Domestic Mediumhair,t
+1129,2,Domestic Shorthair,Domestic Shorthair,t
+1130,2,Egyptian Mau,Egyptian Mau,t
+1131,2,European Burmese,European Burmese,t
+1132,2,Exotic,Exotic,t
+1133,2,Havana Brown,Havana Brown,t
+1134,2,Japanese Bobtail,Japanese Bobtail,t
+1135,2,Javanese,Javanese,t
+1136,2,Korat,Korat,t
+1137,2,LaPerm,LaPerm,t
+1138,2,Manx,Manx,t
+1139,2,Cymric,Cymric,t
+1140,2,Oriental,Oriental,t
+1141,2,RagaMuffin,RagaMuffin,t
+1142,2,Scottish Fold,Scottish Fold,t
+1143,2,Selkirk Rex,Selkirk Rex,t
+1146,2,Somali,Somali,t
+1147,2,Sphynx,Sphynx,t
+1148,2,Tonkinese,Tonkinese,t
+1149,2,Turkish Angora,Turkish Angora,t
+1151,2,Siberian,Siberian,t
+1145,2,Singapura,Singapura,t
+1169,1,Curly-Coated Retriever,Curly-Coated Retriever,t
+16,1,Belgian Shepherd,Belgian Shepherd,t
+95,1,Portuguese Water Dog,Portuguese Water Dog,t
+302,1,Old English Sheepdog,Old English Sheepdog,t
+461,1,Cane Corso,Cane Corso,t
+37,1,Chinese Crested,Chinese Crested,t
+127,1,Wirehaired Pointing Griffon,Wirehaired Pointing Griffon,t
+55,1,Fox Terrier (Wirehaired),Fox Terrier (Wirehaired),t
+441,1,"Terrier (Unknown Type, Medium)",,t
+192,1,Belgian Tervuren,Belgian Tervuren,t
+191,1,Belgian Malinois,Belgian Malinois,t
+24,1,Bouvier des Flandres,Bouvier des Flandres,t
+823,1,Labrador Retriever,Labrador Retriever,t
+1186,1,English (Redtick) Coonhound,English (Redtick) Coonhound,t
+1188,1,Presa Canario,Presa Canario,t
+1189,1,Puli,Puli,t
+1190,2,Calico,Calico,t
+1191,2,Munchkin,Munchkin,t
+1192,2,Polydactyl/Hemingway,Polydactyl/Hemingway,t
+1228,3,Lilac,Lilac,t
+1229,3,Lionhead,Lionhead,t
+1231,3,Mini Rex,Mini Rex,t
+1232,3,Mini Satin,Mini Satin,t
+1233,3,Netherland Dwarf,Netherland Dwarf,t
+1234,3,New Zealand,New Zealand,t
+1235,3,Palomino,Palomino,t
+1236,3,Polish,Polish,t
+1237,3,Rex,Rex,t
+1238,3,Rhinelander,Rhinelander,t
+1239,3,Satin,Satin,t
+1241,3,Silver,Silver,t
+1242,3,Silver Fox,Silver Fox,t
+1243,3,Silver Marten,Silver Marten,t
+1245,3,Tan,Tan,t
+1246,3,Thrianta,Thrianta,t
+1247,4,Chinchilla,Chinchilla,t
+1248,4,Degu,Degu,t
+1249,4,Ferret,Ferret,t
+1250,4,Gerbil,Gerbil,t
+1251,4,Guinea Pig,Guinea Pig,t
+1252,4,Hamster,Hamster,t
+1253,4,Hedgehog,Hedgehog,t
+1254,4,Mouse,Mouse,t
+1255,4,Prairie Dog,Prairie Dog,t
+1256,4,Rat,Rat,t
+1257,4,Skunk,Skunk,t
+1258,4,Sugar Glider,Sugar Glider,t
+1259,5,African Grey,African Grey,t
+1260,5,Amazon,Amazon,t
+1261,5,Brotogeris,Brotogeris,t
+1262,5,Budgie,Budgie,t
+1263,5,Button Quail,Button Quail,t
+1264,5,Caique,Caique,t
+1265,5,Canary,Canary,t
+1266,5,Chicken,Chicken,t
+1267,5,Cockatiel,Cockatiel,t
+1268,5,Cockatoo,Cockatoo,t
+1269,5,Conure,Conure,t
+1270,5,Dove,Dove,t
+1271,5,Duck,Duck,t
+1272,5,Eclectus,Eclectus,t
+1273,5,Emu,Emu,t
+1274,5,Finch,Finch,t
+1275,5,Goose,Goose,t
+1276,5,Guinea Fowl,Guinea Fowl,t
+1277,5,Kakariki,Kakariki,t
+1278,5,Lorikeet,Lorikeet,t
+1279,5,Lovebird,Lovebird,t
+1280,5,Macaw,Macaw,t
+1281,5,Mynah,Mynah,t
+1282,5,Ostrich,Ostrich,t
+1283,5,Parakeet - Quaker,Parakeet - Quaker,t
+1286,5,Parrotlet,Parrotlet,t
+1287,5,Peacock,Peacock,t
+1288,5,Pheasant,Pheasant,t
+1289,5,Pigeon,Pigeon,t
+1290,5,Pionus,Pionus,t
+1291,5,Poicephalus (including Senegal and Meyer's),Poicephalus (including Senegal and Meyer's),t
+1292,5,Quail,Quail,t
+1293,5,Rhea,Rhea,t
+1294,5,Ringneck,Ringneck,t
+1295,5,Rosella,Rosella,t
+1297,5,Swan,Swan,t
+1298,5,Toucan,Toucan,t
+1299,5,Turkey,Turkey,t
+1300,6,Andalusian,Andalusian,t
+1301,6,Appaloosa,Appaloosa,t
+1302,6,Appendix,Appendix,t
+1303,6,Arabian,Arabian,t
+1304,6,Belgian,Belgian,t
+1305,6,Clydesdale,Clydesdale,t
+1306,6,Curly Horse,Curly Horse,t
+1308,6,Draft,Draft,t
+1309,6,Friesian,Friesian,t
+1310,6,Gaited,Gaited,t
+1311,6,Grade,Grade,t
+1312,6,Gypsy Vanner,Gypsy Vanner,t
+1313,6,Haflinger,Haflinger,t
+1314,6,Lipizzaner,Lipizzaner,t
+1315,6,Miniature,Miniature,t
+1316,6,Missouri Foxtrotter,Missouri Foxtrotter,t
+1317,6,Morgan,Morgan,t
+1318,6,Mustang,Mustang,t
+1319,6,Norwegian Fjord,Norwegian Fjord,t
+1321,6,Paint/Pinto,Paint/Pinto,t
+1322,6,Palomino,Palomino,t
+1323,6,Paso Fino,Paso Fino,t
+1324,6,Percheron,Percheron,t
+1325,6,Peruvian Paso,Peruvian Paso,t
+1326,6,Pony - Connemara,Pony - Connemara,t
+1327,6,Pony - Dales,Pony - Dales,t
+1328,6,Pony - Dartmoor,Pony - Dartmoor,t
+1329,6,Pony - Fell,Pony - Fell,t
+1330,6,Pony - New Forest,Pony - New Forest,t
+1331,6,Pony - of America,Pony - of America,t
+1332,6,Pony - Other,Pony - Other,t
+1333,6,Pony - Shetland,Pony - Shetland,t
+1334,6,Pony - Welsh,Pony - Welsh,t
+1335,6,Quarterhorse,Quarterhorse,t
+1336,6,Rocky Mountain,Rocky Mountain,t
+1337,6,Saddlebred,Saddlebred,t
+1338,6,Standardbred,Standardbred,t
+1339,6,Tennessee Walking Horse,Tennessee Walking Horse,t
+1340,6,Thoroughbred,Thoroughbred,t
+1341,6,Trakhener,Trakhener,t
+1342,6,Warmblood,Warmblood,t
+1343,7,Snake,Snake,t
+1344,7,Lizard,Lizard,t
+1345,7,Iguana,Iguana,t
+1346,7,Tortoise,Tortoise,t
+1349,7,Frog,Frog,t
+1350,7,Toad,Toad,t
+1351,7,Scorpion,Scorpion,t
+1352,7,Tarantula,Tarantula,t
+1353,7,Fish,Fish,t
+1354,7,Sea Life (non-fish),Sea Life (non-fish),t
+1355,7,Gecko,Gecko,t
+1356,8,Alpaca,Alpaca,t
+1358,8,Goat,Goat,t
+1359,8,Llama,Llama,t
+1360,8,Pig (Potbellied),Pig (Potbellied),t
+1361,8,Pig (Farm),Pig (Farm),t
+1362,8,Sheep,Sheep,t
+1363,8,Other,Other,t
+1230,3,Mini Lop,Mini Lop,t
+1357,8,Cow or Bull,Cow or Bull,t
+1347,7,Turtle - Water,Turtle - Water,t
+1168,1,Belgian Laekenois,Belgian Laekenois,t
+1214,3,"Angora, English","Angora, English",t
+1219,3,"Angora, French","Angora, French",t
+1221,3,"Angora, Giant","Angora, Giant",t
+1240,3,"Angora, Satin","Angora, Satin",t
+1200,3,"Chinchilla, American","Chinchilla, American",t
+1222,3,"Chinchilla, Giant","Chinchilla, Giant",t
+1244,3,"Chinchilla, Standard","Chinchilla, Standard",t
+1215,3,"Lop, English","Lop, English",t
+1220,3,"Lop, French","Lop, French",t
+1226,3,"Lop, Holland","Lop, Holland",t
+1364,3,Other/Unknown,Other/Uncategorized,t
+1320,6,Other/Unknown,Other/Uncategorized,t
+1365,3,Dwarf,Dwarf,t
+1366,3,Lop-Eared,Lop-Eared,t
+1367,5,Other/Unknown,Other/Uncategorized,t
+1284,5,Parakeet - Other,Parakeet - Other,t
+1285,5,Parrot - Other,Parrot - Other,t
+1296,5,Softbill - Other,Softbill - Other,t
+1348,7,Turtle - Other,Turtle - Other,t
+1369,1,Goldendoodle,Goldendoodle,t
+1082,1,American Staffordshire Terrier,American Staffordshire Terrier,t

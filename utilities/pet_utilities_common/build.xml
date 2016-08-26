@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project name="pet_utilities_common" default="jar">
+
+	<basename property="my.project.name" file="${basedir}" />
+	<property name="jar.name" value="${my.project.name}.jar" />
+
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build/" />
+	<property name="lib.dir" value="../libs" />
+	<property name="dist.dir" value="dist/" />
+	<property name="project.lib.dir" value="lib" />
+	<property name="class.name" value="com.adoptapet.utilities.loader.MetaDataLoader" />
+
+	<echo>Project Name: ${my.project.name}</echo>
+
+	<path id="compile.classpath">
+		<fileset dir="${project.lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${project.lib.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${project.lib.dir}" />
+
+		<copy todir="${project.lib.dir}">
+			<fileset dir="${lib.dir}">
+				<!-- Elastic Search jars -->
+				<include name="elasticsearch-2.3.5.jar" />
+				<include name="lucene-core-5.5.0.jar" />
+				<include name="lucene-analyzers-common-5.5.0.jar" />
+
+				<!-- Elastic Search Support jars -->
+				<include name="commons-collections4-4.1.jar" />
+				<include name="compress-lzf-1.0.2.jar" />
+				<include name="guava-18.0.jar" />
+				<include name="hppc-0.7.1.jar" />
+				<include name="joda-time-2.9.4.jar" />
+				<include name="jsr166e-1.1.0.jar" />
+				<include name="netty-3.10.5.Final.jar" />
+				<include name="t-digest-3.0.jar" />
+
+				<!-- Jackson jars -->
+				<include name="jackson-core-2.6.6.jar" />
+				<include name="jackson-dataformat-smile-2.6.6.jar" />
+
+				<!-- Logger jars -->
+				<include name="log4j.jar" />
+
+				<!-- CsvReader jars -->
+				<include name="opencsv-3.8.jar" />
+
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="checkos">
+		<condition property="isWindows" value="true">
+			<os family="windows" />
+		</condition>
+		<condition property="isLinux" value="true">
+			<os family="unix" />
+		</condition>
+	</target>
+
+
+	<!-- Compile Java files Targets-->
+	<target name="compile" depends="init,if_unix,if_windows" description="compile the source">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="if_unix" depends="checkos" if="isLinux">
+		<javac target="1.8" source="1.8" destdir="${build.dir}" debug="true" srcdir="${src.dir}" fork="yes" executable="/opt/java8/bin/javac" compiler="javac1.8" includeantruntime="false">
+			<classpath refid="compile.classpath" />
+		</javac>
+		<echo message="Ant java version: ${ant.java.version}" />
+		<echo message="java version: ${java.version}" />
+		<echo message="Linux OS" />
+	</target>
+
+	<target name="if_windows" depends="checkos" if="isWindows">
+		<javac target="1.8" source="1.8" destdir="${build.dir}" debug="true" srcdir="${src.dir}" includeantruntime="false">
+			<classpath refid="compile.classpath" />
+		</javac>
+
+		<echo message="Windows OS" />
+		<echo message="Ant java version: ${ant.java.version}" />
+		<echo message="java version: ${java.version}" />
+	</target>
+
+
+	<!-- Compile Java files Targets-->
+
+	<!-- Jars builder Target-->
+	<target name="jar" depends="compile">
+		<echo message="Building Jar" />
+
+		<!-- Get Class-Path for MANIFEST in jar file -->
+		<pathconvert property="manifest.classpath" pathsep=" ">
+			<path refid="compile.classpath" />
+			<mapper>
+				<chainedmapper>
+					<flattenmapper />
+					<globmapper from="*.jar" to="lib/*.jar" />
+				</chainedmapper>
+			</mapper>
+		</pathconvert>
+		<!-- Get Class-Path for MANIFEST in jar file -->
+
+		<jar basedir="${build.dir}" destfile="${dist.dir}${jar.name}">
+			<manifest>
+				<attribute name="Class-Path" value="${manifest.classpath}" />
+				<attribute name="Main-Class" value="${class.name}" />
+			</manifest>
+		</jar>
+
+		<copy file="${dist.dir}${jar.name}" todir="${lib.dir}" />
+	</target>
+	<!-- Jars builder Target-->
+
+
+
+</project>

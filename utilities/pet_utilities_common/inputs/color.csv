@@ -1,0 +1,125 @@
+pet_color_id,clan_id,shelter_name,public_name
+1,2,Black (All),All Black
+59,1,Gray/Blue/Silver/Salt & Pepper,Gray/Blue/Silver/Salt & Pepper
+45,1,Black,Black
+46,1,"Black - with Tan, Yellow or Fawn","Black - with Tan, Yellow or Fawn"
+47,1,Black - with White,Black - with White
+49,1,Brindle,Brindle
+51,1,Brindle - with White,Brindle - with White
+54,1,Brown/Chocolate,Brown/Chocolate
+55,1,Brown/Chocolate - with Black,Brown/Chocolate - with Black
+56,1,Brown/Chocolate - with White,Brown/Chocolate - with White
+62,1,Red/Golden/Orange/Chestnut,Red/Golden/Orange/Chestnut
+63,1,Red/Golden/Orange/Chestnut - with Black,Red/Golden/Orange/Chestnut - with Black
+64,1,Red/Golden/Orange/Chestnut - with White,Red/Golden/Orange/Chestnut - with White
+50,1,Silver & Tan (Yorkie colors),Silver & Tan (Yorkie colors)
+60,1,Tan/Yellow/Fawn,Tan/Yellow/Fawn
+61,1,Tan/Yellow/Fawn - with White,Tan/Yellow/Fawn - with White
+66,1,White,White
+67,1,White - with Black,White - with Black
+68,1,White - with Brown or Chocolate,White - with Brown or Chocolate
+74,1,"Black - with Brown, Red, Golden, Orange or Chestnut","Black - with Brown, Red, Golden, Orange or Chestnut"
+75,1,Black - with Gray or Silver,Black - with Gray or Silver
+80,1,Brown/Chocolate - with Tan,Brown/Chocolate - with Tan
+83,1,Gray/Silver/Salt & Pepper - with White,Gray/Silver/Salt & Pepper - with White
+84,1,Gray/Silver/Salt & Pepper - with Black,Gray/Silver/Salt & Pepper - with Black
+85,1,Merle,Merle
+92,1,Tan/Yellow/Fawn - with Black,Tan/Yellow/Fawn - with Black
+93,1,Tricolor (Tan/Brown & Black & White),Tricolor (Tan/Brown & Black & White)
+95,1,"White - with Tan, Yellow or Fawn","White - with Tan, Yellow or Fawn"
+96,1,"White - with Red, Golden, Orange or Chestnut","White - with Red, Golden, Orange or Chestnut"
+97,1,White - with Gray or Silver,White - with Gray or Silver
+100,2,Cream or Ivory,Cream or Ivory
+101,2,Cream or Ivory (Mostly),Cream or Ivory (Mostly)
+102,2,Spotted Tabby/Leopard Spotted,Spotted Tabby/Leopard Spotted
+2,2,Black (Mostly),Black (Mostly)
+4,2,Black & White or Tuxedo,Black & White or Tuxedo
+5,2,Brown or Chocolate,Brown or Chocolate
+6,2,Brown or Chocolate (Mostly),Brown or Chocolate (Mostly)
+12,2,Brown Tabby,Brown Tabby
+7,2,Calico or Dilute Calico,Calico or Dilute Calico
+9,2,Gray or Blue (Mostly),Gray or Blue (Mostly)
+13,2,"Gray, Blue or Silver Tabby","Gray, Blue or Silver Tabby"
+10,2,Orange or Red,Orange or Red
+11,2,Orange or Red (Mostly),Orange or Red (Mostly)
+14,2,Orange or Red Tabby,Orange or Red Tabby
+21,2,Tan or Fawn (Mostly),Tan or Fawn (Mostly)
+15,2,Tan or Fawn Tabby,Tan or Fawn Tabby
+22,2,Tortoiseshell,Tortoiseshell
+23,2,White,White
+44,2,White (Mostly),White (Mostly)
+104,2,Tiger Striped,Tiger Striped
+8,2,Gray or Blue,Gray or Blue
+20,2,Tan or Fawn,Tan or Fawn
+105,3,Agouti,Agouti
+106,3,Albino or Red-Eyed White,Albino or Red-Eyed White
+107,3,Blue,Blue
+108,3,Black,Black
+109,3,Blond/Golden,Blond/Golden
+110,3,Chinchilla,Chinchilla
+111,3,Chocolate,Chocolate
+112,3,Cinnamon,Cinnamon
+113,3,Copper,Copper
+114,3,Cream,Cream
+115,3,Dutch,Dutch
+116,3,Fawn,Fawn
+117,3,Grey/Silver,Grey/Silver
+118,3,Harlequin,Harlequin
+119,3,Lilac,Lilac
+120,3,Multi,Multi
+121,3,Orange,Orange
+122,3,Red,Red
+123,3,Sable,Sable
+124,3,Siamese,Siamese
+125,3,Tan,Tan
+126,3,Tortoise,Tortoise
+127,3,Tri-color,Tri-color
+128,3,White,White
+129,4,Albino or Red-Eyed White,Albino or Red-Eyed White
+130,4,Black,Black
+131,4,Blonde,Blonde
+132,4,Brown or Chocolate,Brown or Chocolate
+133,4,Buff,Buff
+134,4,Calico,Calico
+135,4,Cream,Cream
+136,4,Golden,Golden
+137,4,Lilac,Lilac
+138,4,Multi,Multi
+139,4,Orange,Orange
+140,4,Red,Red
+141,4,Sable,Sable
+142,4,Silver or Gray,Silver or Gray
+143,4,Tan or Beige,Tan or Beige
+144,4,Tortoiseshell,Tortoiseshell
+145,4,White,White
+146,4,Yellow,Yellow
+147,5,Black,Black
+148,5,Blue,Blue
+149,5,Brown,Brown
+150,5,Buff,Buff
+151,5,Gray,Gray
+152,5,Green,Green
+153,5,Olive,Olive
+154,5,Orange,Orange
+155,5,Pink,Pink
+156,5,Purple/Violet,Purple/Violet
+157,5,Red,Red
+158,5,Rust,Rust
+159,5,Tan,Tan
+160,5,White,White
+161,5,Yellow,Yellow
+162,6,Appy,Appy
+163,6,Bay,Bay
+164,6,Black,Black
+165,6,Buckskin,Buckskin
+166,6,Champagne,Champagne
+167,6,Chestnut/Sorrel,Chestnut/Sorrel
+168,6,Cremello,Cremello
+169,6,Dun,Dun
+170,6,Gray,Gray
+171,6,Grullo,Grullo
+172,6,Paint,Paint
+173,6,Palomino,Palomino
+174,6,Perlino,Perlino
+175,6,Roan,Roan
+176,6,White,White
