@@ -1,3 +1,10 @@
 .idea
 microservices\libs\.project
 microservices\libs\pet*
+..\..\bin
+..\..\build
+..\..\dist
+..\..\lib
+..\..\.settings
+..\..\.classpath
+..\..\.project
