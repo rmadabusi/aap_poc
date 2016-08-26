@@ -5,8 +5,8 @@
  * Description:
  *
  *
- * Created Date:Aug 24, 2016
- * Modified Date:Aug 24, 2016
+ * 
+ * 
  *
  * Copyright to Treselle
  */
@@ -19,10 +19,9 @@ public class StringUtils {
      * 
      * @param str
      * @return
-     *         Aug 11, 2015
      */
     public static boolean isValidString(String str) {
-        return (str != null) && (!str.trim().isEmpty());
+        return str != null && !str.trim().isEmpty();
     }
 
 }

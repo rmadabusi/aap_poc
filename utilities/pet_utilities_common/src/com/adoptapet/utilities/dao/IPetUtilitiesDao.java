@@ -5,8 +5,8 @@
  * Description:
  *
  *
- * Created Date:Aug 24, 2016
- * Modified Date:Aug 24, 2016
+ * 
+ * 
  *
  * Copyright to Treselle
  */
@@ -16,22 +16,22 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public interface IPetUtilitiesDao {
+/**
+ * IPetUtilitiesDao Interface designed to get details methods from ES.
+ * 
+ * @author Treselle Systems
+ * @version 1.0
+ * @since 1.0 (the version of the package this class was first added to)
+ */
 
-    /**
-     * Get status of Elastic Search
-     * 
-     * @return object
-     *         Aug 24, 2016
-     */
-    Object getStatus();
+public interface IPetUtilitiesDao {
 
     /**
      * Create Index for given name.
      * 
      * @param index
      * @return object
-     *         Aug 24, 2016
+     * 
      */
     Object createIndex(String index, String... types);
 
@@ -40,27 +40,25 @@ public interface IPetUtilitiesDao {
      * 
      * @param index
      * @return object
-     *         Aug 24, 2016
+     * 
      */
     Object deleteIndex(String... index);
 
     /**
-     * Load list of documents into Index for given name for given type.
+     * Get list of Families details for given family ids
      * 
-     * @param index
-     * @param type
-     * @param documents
+     * @param ids
      * @return
-     *         Aug 24, 2016
+     * 
      */
-    Object insertDocuments(String index, String type, Collection<Map<String, Object>> documents);
+    Object getClanDetails(List<Integer> ids);
 
     /**
      * Get list of color details for given color ids
      * 
      * @param ids
      * @return object
-     *         Aug 24, 2016
+     * 
      */
     Object getColors(List<Integer> ids);
 
@@ -69,17 +67,26 @@ public interface IPetUtilitiesDao {
      * 
      * @param ids
      * @return
-     *         Aug 24, 2016
+     * 
      */
     Object getFamilies(List<Integer> ids);
 
     /**
-     * Get list of Families details for given family ids
+     * Get status of Elastic Search
      * 
-     * @param ids
-     * @return
-     *         Aug 24, 2016
+     * @return object Aug 24, 2016
      */
-    Object getClanDetails(List<Integer> ids);
+    Object getStatus();
+
+    /**
+     * Load list of documents into Index for given name for given type.
+     * 
+     * @param index
+     * @param type
+     * @param documents
+     * @return
+     * 
+     */
+    Object insertDocuments(String index, String type, Collection<Map<String, Object>> documents);
 
 }

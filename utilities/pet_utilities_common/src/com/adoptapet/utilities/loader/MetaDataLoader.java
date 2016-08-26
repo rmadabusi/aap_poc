@@ -5,8 +5,8 @@
  * Description:
  *
  *
- * Created Date:Aug 24, 2016
- * Modified Date:Aug 24, 2016
+ * 
+ * 
  *
  * Copyright to Treselle
  */
@@ -19,28 +19,31 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.log4j.Logger;
-
+import com.adoptapet.utilities.constants.ApplicationConstants;
 import com.adoptapet.utilities.dao.IPetUtilitiesDao;
 import com.adoptapet.utilities.dao.impl.PetUtilitiesDao;
 import com.opencsv.CSVReader;
 
+/**
+ * MetaDataLoader class used for DB CRUD opertions.
+ * 
+ * @author Treselle Systems
+ * @version 1.0
+ * @since 1.0 (the version of the package this class was first added to)
+ */
+
 public class MetaDataLoader {
 
-    private static final Logger   LOG         = Logger.getLogger(MetaDataLoader.class);
-    private static final String   FILE_PATH   = "inputs/";
-    private static final String   FILE_FORMAT = ".csv";
-    private static final String   INDEX_NAME  = "metadata";
-    private static final String[] TYPES       = { "clan", "color", "family" };
+    private static final Logger LOG = Logger.getLogger(MetaDataLoader.class);
 
     /**
      * @param args
-     *            Aug 24, 2016
+     * 
      */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        LOG.info("Initialize MetaDataLoader");
+        MetaDataLoader.LOG.info("Initialize MetaDataLoader");
         try {
             MetaDataLoader loader = new MetaDataLoader();
             String hostName = "localhost";
@@ -48,24 +51,21 @@ public class MetaDataLoader {
             String clusterName = "elasticsearch";
             IPetUtilitiesDao dao = new PetUtilitiesDao(hostName, port, clusterName);
 
-            dao.deleteIndex(INDEX_NAME);
-            dao.createIndex(INDEX_NAME, TYPES);
-            for (String type : TYPES) {
-                Set<Map<String, Object>> documents = loader.readValues(FILE_PATH + type + FILE_FORMAT);
-                System.out.println("Doc found: " + documents.size());
-                dao.insertDocuments(INDEX_NAME, type, documents);
+            dao.deleteIndex(ApplicationConstants.INDEX_NAME);
+            dao.createIndex(ApplicationConstants.INDEX_NAME, ApplicationConstants.TYPES);
+            for (String type : ApplicationConstants.TYPES) {
+                Set<Map<String, Object>> documents = loader.readValues(ApplicationConstants.FILE_PATH + type + ApplicationConstants.FILE_FORMAT);
+                dao.insertDocuments(ApplicationConstants.INDEX_NAME, type, documents);
             }
 
             List<Integer> list = new ArrayList<>();
             list.add(1);
 
-            System.err.println(dao.getColors(list));
-
         } catch (Exception e) {
             e.printStackTrace();
         }
         long end = System.currentTimeMillis();
-        LOG.info("completed MetaDataLoader, time taken: " + (end - start));
+        MetaDataLoader.LOG.info("completed MetaDataLoader, time taken: " + (end - start));
     }
 
     /**
@@ -73,7 +73,7 @@ public class MetaDataLoader {
      * 
      * @param type
      * @return Set - list of key/values.
-     *         Aug 24, 2016
+     * 
      */
     public Set<Map<String, Object>> readValues(String fileName) {
         Set<Map<String, Object>> values = new HashSet<Map<String, Object>>();
