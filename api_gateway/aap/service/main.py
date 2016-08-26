@@ -71,6 +71,32 @@ def api_family_details(id):
 #For getting color details based on Pet color ids
 @app.route('/pets/colors/<id>', methods=["GET"])
 def api_color_details(id):
+    """
+    User API
+    This resource returns basic pet colours information
+    ---
+    tags:
+      - basic pet utilities
+    parameters:
+      - name: id
+        in: path
+        type: string
+        description: The value corresponding to a color_id of a pet
+        required: true
+    responses:
+      200:
+        description: Because it is possible for multiple colors to be returned from this API Query, the JSON response will always return an Array of Objects, even if there is only one Object returned
+        schema:
+          id: user_response
+          properties:
+            response:
+              schema:
+                properties:
+                  some_key:
+                    type: int
+                    description: Unexpected error
+                    default: some_values
+    """
     result = get_colors_details(id)
     return result
 
