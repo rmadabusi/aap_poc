@@ -4,7 +4,7 @@
 
 	<basename property="my.project.name" file="${basedir}" />
 	<property name="jar.name" value="${my.project.name}.jar" />
-	<property name="class.name" value="com.adoptapet.usage.metric.runner.ServiceRunner" />
+	<property name="class.name" value="com.adoptapet.usagemetric.runner.ServiceRunner" />
 
 	<property name="src.dir" value="src" />
 	<property name="build.dir" value="build/" />
