@@ -57,12 +57,12 @@ application
        */
       getPetTypeDetails: function() {
         var petTypeDetails = {
-          '1': {'clan_name' : 'Rabbits', 'clan_id' : '3'},
-          '2': {'clan_name' : 'Small Animals', 'clan_id' : '4'},
-          '3': {'clan_name' : 'Birds', 'clan_id' : '5'},
-          '4': {'clan_name' : 'Horses', 'clan_id' : '6'},
-          '5': {'clan_name' : 'Reptiles, Amphibians, &amp; Fish', 'clan_id' : '7'},
-          '6': {'clan_name' : 'Farm-Type Animals', 'clan_id' : '8'}
+          '1': {'clan_name' : 'Birds', 'clan_id' : '5'},
+          '2': {'clan_name' : 'Farm-Type Animals', 'clan_id' : '8'},
+          '3': {'clan_name' : 'Horses', 'clan_id' : '6'},
+          '4': {'clan_name' : 'Rabbits', 'clan_id' : '3'},
+          '5': {'clan_name' : 'Reptiles, Amphibians, & Fish', 'clan_id' : '7'},
+          '6': {'clan_name' : 'Small Animals', 'clan_id' : '4'}
         };
         return petTypeDetails;
       }
