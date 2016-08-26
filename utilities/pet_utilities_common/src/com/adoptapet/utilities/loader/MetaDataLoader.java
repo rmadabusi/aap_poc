@@ -4,10 +4,6 @@
  * Class Name: MetaDataLoader.java
  * Description:
  *
- *
- * 
- * 
- *
  * Copyright to Treselle
  */
 package com.adoptapet.utilities.loader;
