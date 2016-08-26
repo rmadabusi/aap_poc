@@ -5,9 +5,9 @@
  * Description:
  *
  *
-
-
  *
+ * 
+ * 
  * Copyright to Treselle
  */
 package com.adoptapet.color.runner;
@@ -22,21 +22,19 @@ import com.adoptapet.color.constants.ApplicationConstants;
 import com.adoptapet.utilities.utils.PropertyUtil;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.adoptapet.color.configuration",
-		"com.adoptapet.color.controller", "com.adoptapet.color.service" })
+@ComponentScan(basePackages = { "com.adoptapet.color.controller", "com.adoptapet.color.service" })
 public class ServiceRunner {
 
-	public ServiceRunner() {
-		try {
-			PropertyUtil.init(ServiceRunner.class
-					.getResourceAsStream(ApplicationConstants.PROPERTY_FILE));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public ServiceRunner() {
+        try {
+            PropertyUtil.init(ServiceRunner.class.getResourceAsStream(ApplicationConstants.PROPERTY_FILE));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(ServiceRunner.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceRunner.class, args);
+    }
 
 }

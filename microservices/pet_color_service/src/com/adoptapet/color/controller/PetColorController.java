@@ -5,9 +5,9 @@
  * Description:
  *
  *
-
-
  *
+ * 
+ * 
  * Copyright to Treselle
  */
 package com.adoptapet.color.controller;
@@ -25,79 +25,74 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.adoptapet.color.constants.ApplicationConstants;
 import com.adoptapet.color.service.IPetColorService;
 
 @RestController
 public class PetColorController {
 
-	/**
-	 * LOGGER
-	 */
-	public static final Logger LOG = Logger.getLogger(PetColorController.class);
+    /**
+     * LOGGER
+     */
+    public static final Logger LOG = Logger.getLogger(PetColorController.class);
 
-	@Autowired
-	private IPetColorService petColorService;
+    @Autowired
+    private IPetColorService   petColorService;
 
-	/**
-	 * Pet Color Service having Color ID as the parameter. This service should
-	 * display the details of the given Color ID.
-	 * 
-	 * @param ids
-	 * @return
-	 */
+    /**
+     * Pet Color Service having Color ID as the parameter. This service should
+     * display the details of the given Color ID.
+     * 
+     * @param ids
+     * @return
+     */
 
-	@RequestMapping(value = "/pets/colors/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
-	public Object getColors(@PathVariable("id") List<Integer> ids) {
-		PetColorController.LOG.info("/pets/colors/ service initialized for "
-				+ ids);
-		long start = System.currentTimeMillis();
-		
-		System.err.println(">>>>  "+ids);
+    @RequestMapping(value = "/pets/colors/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+    public Object getColors(@PathVariable("id") List<Integer> ids) {
+        PetColorController.LOG.info("/pets/colors/ service initialized for " + ids);
+        long start = System.currentTimeMillis();
 
-		Map<String, Object> response = new HashMap<String, Object>();
-		try {
-			response.put("response", this.petColorService.getColors(ids));
-		} catch (Exception e) {
-			response.put("error", e.getMessage());
-			PetColorController.LOG.error("Exception occured at /pets/colors/ "
-					+ e.getMessage());
-		}
+        System.err.println(">>>>  " + ids);
 
-		long end = System.currentTimeMillis();
-		PetColorController.LOG.info("/pets/colors/ service initialized for "
-				+ ids + " executed, time taken: " + (end - start));
-		return response;
-	}
+        Map<String, Object> response = new HashMap<String, Object>();
+        try {
+            response.put(ApplicationConstants.RESPONSE, this.petColorService.getColors(ids));
+        } catch (Exception e) {
+            response.put(ApplicationConstants.ERROR, e.getMessage());
+            PetColorController.LOG.error("Exception occured at /pets/colors/ " + e.getMessage());
+        }
 
-	/**
-	 * This service is used to get the status of the service. If the service is
-	 * alive it returns true. Implementation in Utility class.
-	 * 
-	 * @return
-	 */
+        long end = System.currentTimeMillis();
+        PetColorController.LOG.info("/pets/colors/ service initialized for " + ids + " executed, time taken: " + (end - start));
+        return response;
+    }
 
-	@RequestMapping(value = "/status", method = RequestMethod.GET)
-	public Object getStatus() {
-		PetColorController.LOG.info("/status service initialized ");
-		long start = System.currentTimeMillis();
+    /**
+     * This service is used to get the status of the service. If the service is
+     * alive it returns true. Implementation in Utility class.
+     * 
+     * @return
+     */
 
-		Map<String, Object> response = new HashMap<String, Object>();
-		try {
-			response.put("status", this.petColorService.getStatus());
-		} catch (Exception e) {
-			Map<String, Object> error = new HashMap<>();
-			error.put("code", 500);
-			error.put("msg", e.getMessage());
-			error.put("details", e.getMessage());
-			response.put("error", error);
-			PetColorController.LOG.error("Exception occured at /status "
-					+ e.getMessage());
-		}
+    @RequestMapping(value = "/status", method = RequestMethod.GET)
+    public Object getStatus() {
+        PetColorController.LOG.info("/status service initialized ");
+        long start = System.currentTimeMillis();
 
-		long end = System.currentTimeMillis();
-		PetColorController.LOG
-				.info("/status service initialized executed, time taken: "
-						+ (end - start));
-		return response;
-	}
+        Map<String, Object> response = new HashMap<String, Object>();
+        try {
+            response.put(ApplicationConstants.STATUS, this.petColorService.getStatus());
+        } catch (Exception e) {
+            Map<String, Object> error = new HashMap<>();
+            error.put(ApplicationConstants.CODE, 500);
+            error.put(ApplicationConstants.MSG, e.getMessage());
+            error.put(ApplicationConstants.DETAILS, e.getMessage());
+            response.put(ApplicationConstants.ERROR, error);
+            PetColorController.LOG.error("Exception occured at /status " + e.getMessage());
+        }
+
+        long end = System.currentTimeMillis();
+        PetColorController.LOG.info("/status service initialized executed, time taken: " + (end - start));
+        return response;
+    }
 }

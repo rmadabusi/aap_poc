@@ -5,9 +5,9 @@
  * Description:
  *
  *
-
-
  *
+ * 
+ * 
  * Copyright to Treselle
  */
 package com.adoptapet.color.service.impl;
@@ -18,6 +18,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.adoptapet.color.constants.ApplicationConstants;
 import com.adoptapet.color.service.IPetColorService;
 import com.adoptapet.utilities.dao.IPetUtilitiesDao;
 import com.adoptapet.utilities.dao.impl.PetUtilitiesDao;
@@ -28,10 +29,15 @@ public class PetColorService implements IPetColorService {
 
     private IPetUtilitiesDao petUtilitiesDao;
 
+    /**
+     * PetColorService constructor is used to connect to Elastic Search
+     * Database keeping the 2nd arguments as default. PetUtilitiesDao java class
+     * is used to connect to Elastic Search
+     */
     public PetColorService() {
-        String hostName = PropertyUtil.getValue("es.hostname", "localhost");
-        int port = Integer.parseInt(PropertyUtil.getValue("es.port", "9300"));
-        String clusterName = PropertyUtil.getValue("es.cluster.name", "elasticsearch");
+        String hostName = PropertyUtil.getValue(ApplicationConstants.ES_HOST_PROPERTY, ApplicationConstants.ES_DEFUALT_HOST);
+        int port = Integer.parseInt(PropertyUtil.getValue(ApplicationConstants.ES_PORT_PROPERTY, ApplicationConstants.ES_DEFUALT_PORT));
+        String clusterName = PropertyUtil.getValue(ApplicationConstants.ES_CLUSTER_NAME_PROPERTY, ApplicationConstants.ES_DEFUALT_CLUSTER_NAME);
         try {
             this.petUtilitiesDao = new PetUtilitiesDao(hostName, port, clusterName);
         } catch (Exception e) {
@@ -63,8 +69,8 @@ public class PetColorService implements IPetColorService {
     @Override
     public Object getStatus() {
         Map<String, Object> response = new HashMap<>();
-        response.put("initialized", true);
-        response.put("db_healthy", this.petUtilitiesDao.getStatus());
+        response.put(ApplicationConstants.INITIALIZED, true);
+        response.put(ApplicationConstants.DB_HEALTHY, this.petUtilitiesDao.getStatus());
         return response;
     }
 
