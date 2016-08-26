@@ -1,7 +1,7 @@
 from __future__ import division
 from flask import Flask
 import json
-from aap.service.implementations.main_services import get_status, get_family_details
+from api_gateway.aap.service.implementations.main_services import get_status, get_family_details
 
 __author__ = "Treselle"
 

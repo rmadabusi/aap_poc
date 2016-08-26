@@ -1,5 +1,5 @@
 import urllib2
-from aap.confg.config import STATUS, URL_HEADER_FAMILY, URL_HEADER_COLORS, GET_FAMILY_DETAILS
+from api_gateway.aap.config.config import STATUS, URL_HEADER_FAMILY, URL_HEADER_COLORS, GET_FAMILY_DETAILS
 
 
 #--------------------------------------------Get all service status----------------------------------------------------#
