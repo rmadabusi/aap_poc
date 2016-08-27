@@ -12,8 +12,9 @@ echo "Environments : " $envt
 echo "Project path : " $path
 echo "Action       : " $action
 
+cd $envt
 ########################################################
-#                Action                     #
+#                Action                                #
 ########################################################
 
 main()
@@ -21,7 +22,9 @@ main()
   case "$action" in
   1) sh clean.sh "$path"
     ;;
-  2) sh backup.sh "$path"
+  2) sudo sh backup.sh "$path"
+    ;;
+  3) sh clone.sh "$path"
     ;;
   *) echo "invalid option"
     ;;
