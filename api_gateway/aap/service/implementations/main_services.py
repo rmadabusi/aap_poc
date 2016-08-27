@@ -17,17 +17,37 @@ def get_status():
 
 
 #---------------------------------For getting family details based on Pet family ids-----------------------------------#
-def get_family_details(id):
+def get_family_details(id,cache):
+    response_dict={}
+    cached = cache.get(str(id))
+    if cached:
+        return cached
     service = URL_HEADER_FAMILY+GET_FAMILY_DETAILS+str(id)
     result = urllib2.urlopen(service).read()
-    return result
+    json_result =json.loads(result)
+    if len(json_result["response"])==0:
+        response_dict["response"]={"error":"Clan information not available"}
+    else:
+        response_dict["response"]=json_result["response"]
+        cache.set(str(id), json_result)
+    return response_dict
 #----------------------------------------------------------------------------------------------------------------------#
 
 #---------------------------------For getting color details based on Pet color ids------------------------------------#
-def get_colors_details(id):
+def get_colors_details(id,cache):
+    response_dict={}
+    cached = cache.get(str(id))
+    if cached:
+        return cached
     service = URL_HEADER_COLORS+GET_COLOR_DETAILS+str(id)
     result = urllib2.urlopen(service).read()
-    return result
+    json_result =json.loads(result)
+    if len(json_result["response"])==0:
+        response_dict["response"]={"error":"Clan information not available"}
+    else:
+        response_dict["response"]=json_result["response"]
+        cache.set(str(id), json_result)
+    return response_dict
 #----------------------------------------------------------------------------------------------------------------------#
 
 #------------------------------------------For Tracking Usage metrics Details------------------------------------------#

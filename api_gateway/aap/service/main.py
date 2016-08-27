@@ -1,14 +1,18 @@
 from __future__ import division
-from flask import Flask, request
+from flask import Flask, request,jsonify
 import json
 from api_gateway.aap.service.implementations.main_services import get_status, get_family_details, get_colors_details, pet_usage_metrics
 from urllib import unquote
 from flasgger import Swagger
+from flask.ext.cache import Cache
 
 __author__ = "Treselle"
 
 app = Flask(__name__)
 Swagger(app)
+
+# Check Configuring Flask-Cache section for more details
+cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 
 #Get all service status
 @app.route("/status", methods=["GET"])
@@ -65,8 +69,8 @@ def api_family_details(id):
                     description: Unexpected error
                     default: some_values
     """
-    result = get_family_details(id)
-    return result
+    result = get_family_details(id,cache)
+    return jsonify(result)
 
 #For getting color details based on Pet color ids
 @app.route('/pets/colors/<id>', methods=["GET"])
@@ -97,8 +101,8 @@ def api_color_details(id):
                     description: Unexpected error
                     default: some_values
     """
-    result = get_colors_details(id)
-    return result
+    result = get_colors_details(id,cache)
+    return jsonify(result)
 
 #For Tracking Usage metrics Details
 @app.route("/pets/usage_metrics", methods=["GET", "POST"])
