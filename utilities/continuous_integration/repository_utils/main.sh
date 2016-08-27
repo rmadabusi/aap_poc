@@ -24,7 +24,7 @@ main()
     ;;
   2) sudo sh backup.sh "$path"
     ;;
-  3) sh clone.sh "$path"
+  3) sh clone.sh "$path" "$4"
     ;;
   *) echo "invalid option"
     ;;
