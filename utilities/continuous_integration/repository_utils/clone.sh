@@ -28,10 +28,10 @@ copy()
       cd $path/aap_poc
       git checkout developing
       echo "cloned successfully"
-      cp -rf $path/aap_poc/* /mnt/codebase_bk/.
+      cp -rf $path/aap_poc/* $src.
     fi
   fi
 }
 
 clone $path
-copy $path
+copy $path $src
