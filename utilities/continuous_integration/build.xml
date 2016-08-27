@@ -1,8 +1,20 @@
 <project name="AAP_CI" default="info">
 
   <property file="build.properties"/>
-  
-  <target name="backup" description="This will create backup for the existing source code">
+
+  <target name="home_clean">
+    <delete dir="${source}"/>
+    <delete dir="${temp}"/>
+    <delete dir="${target}"/>
+  </target>
+
+  <target name="init" depends="home_clean">
+    <mkdir dir="${archives}"/>
+    <mkdir dir="${source}"/>
+    <mkdir dir="${temp}"/>
+  </target>
+
+  <target name="backup" depends="init" description="This will create backup for the existing source code">
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -15,7 +27,7 @@
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
-      <arg value="${sourcecode}"/>
+      <arg value="${source}"/>
       <arg value="1"/>
     </exec>
   </target>
@@ -24,10 +36,12 @@
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
-      <arg value="${targetcode}"/>
+      <arg value="${temp}"/>
       <arg value="3"/>
-      <arg value="${source}"/>
     </exec>
+    <copy todir="${source}">
+      <fileset dir="${temp}/aap_poc/"/>
+    </copy>
   </target>
 
   <target name="download" depends="backup,clean,clone" description="This will do backup, clean and clone together"/>
@@ -55,10 +69,20 @@
   </target>
 
   <!-- DAO Code" -->
+  <target name="dao_init" description="Creating executable folder">
+    <mkdir dir="${utilities_dao_dist}"/>
+  </target>
+
   <target name="dao_build" description="build and move the files to lib folder">
-    <ant antfile="build.xml" dir="${utilities_src_build}"
+    <ant antfile="build.xml" dir="${utilities_dao_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+    <copy todir="${utilities_dao_dist}">
+      <fileset dir="${utilities_dao_build}/dist/"/>
+    </copy>
+    <copy todir="${utilities_dao_dist}/inputs">
+      <fileset dir="${utilities_dao_build}/dist/"/>
+    </copy>
   </target>
 
   <!-- Micro-services Code" -->
@@ -89,5 +113,8 @@
       <fileset dir="${colors_src_build}/dist/"/>
     </copy>
   </target>
+  
+  <!-- all -->
+  <target name="all_build" depends="download,app_build,gateway_build,dao_build,families_build,colors_build" description="This task will build together"/>
 
 </project>
