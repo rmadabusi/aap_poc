@@ -1,0 +1,92 @@
+<project name="AAP_CI" default="info">
+
+  <property file="build.properties"/>
+  
+  <target name="backup" description="This will create backup for the existing source code">
+    <exec executable="/bin/bash">
+      <arg value="${script.location}${main.script}"/>
+      <arg value="${script.location}"/>
+      <arg value="${home}"/>
+      <arg value="2"/>
+    </exec>
+  </target>
+
+  <target name="clean" description="This will clean the source code directory">
+    <exec executable="/bin/bash">
+      <arg value="${script.location}${main.script}"/>
+      <arg value="${script.location}"/>
+      <arg value="${sourcecode}"/>
+      <arg value="1"/>
+    </exec>
+  </target>
+
+  <target name="clone" description="This will clone the project from the git location">
+    <exec executable="/bin/bash">
+      <arg value="${script.location}${main.script}"/>
+      <arg value="${script.location}"/>
+      <arg value="${targetcode}"/>
+      <arg value="3"/>
+    </exec>
+  </target>
+
+  <target name="download" depends="backup,clean,clone" description="This will do backup, clean and clone together"/>
+  
+  <!-- Front-end Code" -->
+  <target name="app_init" description="Creating executable folder">
+    <mkdir dir="${app_dist}"/>
+  </target>
+  
+  <target name="app_build" depends="app_init" description="build and move the files to executable folder">
+    <copy todir="${app_dist}">
+      <fileset dir="${app_src}"/>
+    </copy>
+  </target>
+
+  <!-- Gateway Code" -->
+  <target name="gateway_init" description="Creating executable folder">
+    <mkdir dir="${gateway_dist}"/>
+  </target>
+
+  <target name="gateway_build" depends="gateway_init" description="build and move the files to executable folder">
+    <copy todir="${gateway_dist}">
+      <fileset dir="${gateway_src}"/>
+    </copy>
+  </target>
+
+  <!-- DAO Code" -->
+  <target name="dao_build" description="build and move the files to lib folder">
+    <ant antfile="build.xml" dir="${utilities_src_build}"
+            inheritAll="true" inheritRefs="true" >
+    </ant>
+  </target>
+
+  <!-- Micro-services Code" -->
+  <!-- pet families -->
+  <target name="families_init" description="Creating executable folder">
+    <mkdir dir="${families_dist}"/>
+  </target>
+
+  <target name="families_build" depends="families_init" description="build and move the files to lib folder">
+    <ant antfile="build.xml" dir="${families_src_build}"
+            inheritAll="true" inheritRefs="true" >
+    </ant>
+    <copy todir="${families_dist}">
+      <fileset dir="${families_src_build}/dist/"/>
+    </copy>
+  </target>
+  
+  <!-- pet colors -->
+  <target name="colors_init" description="Creating executable folder">
+    <mkdir dir="${colors_dist}"/>
+  </target>
+
+  <target name="colors_build" depends="colors_init" description="build and move the files to lib folder">
+    <ant antfile="build.xml" dir="${colors_src_build}"
+            inheritAll="true" inheritRefs="true" >
+    </ant>
+    <copy todir="${colors_dist}">
+      <fileset dir="${colors_src_build}/dist/"/>
+    </copy>
+  </target>
+
+</project>
