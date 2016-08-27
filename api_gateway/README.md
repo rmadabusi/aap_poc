@@ -1,10 +1,11 @@
-Readme for API Gateway Details goes here
 
-It contains three services,
-	1. pet_family_service
-	2. pet_color_service
-	3. pet_usagemetrics_service
-	4. status
+
+It contains three services
+
+* pet_family_service
+* pet_color_service
+* pet_usagemetrics_service
+* status
 
 
 Flasgger (along with Swagger):
@@ -24,7 +25,6 @@ pip install flasgger
 
 Run - python main.py
 
-
 Web URL:
 ========
 
@@ -35,12 +35,12 @@ The page created using the above URL will include the following services:
 Basic pet utilities Services:
 =============================
 
-Families Service: It provides details about the families based on the clan id.
-Color Service: It provides details about the colors based on the clan id.
+* **Families Service:** It provides details about the families based on the clan id.
+* **Color Service:** It provides details about the colors based on the clan id.
 
 Status services:
 ================
 
-Status Service: It provides details about the status of all micro services, Database, and Database responses.
+**Status Service:** It provides details about the status of all micro services, Database, and Database responses.
 
 
