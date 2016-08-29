@@ -64,7 +64,7 @@
   <target name="app_build" depends="app_init" description="build and move the files to executable folder">
     <echo message="Building app code base v1."/>
     <copy todir="${app_dist}">
-      <fileset dir="${app_src}"/>
+      <fileset dir="${app_src}/app_no_slush/"/>
     </copy>
   </target>
 
@@ -182,6 +182,7 @@
       <arg value="${utilities}/docker/docker.sh"/>
       <arg value="stop"/>
       <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
   
@@ -192,6 +193,7 @@
       <arg value="${utilities}/docker/docker.sh"/>
       <arg value="build"/>
       <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
 
@@ -201,6 +203,7 @@
       <arg value="${utilities}/docker/docker.sh"/>
       <arg value="start"/>
       <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
   
@@ -265,4 +268,9 @@
     </exec>
 
   </target> 
+  <target name="run" depends="docker_start,test_case">
+  </target>
+  <target name="info" depends="run">
+    <echo message=""/>
+  </target>
 </project>
