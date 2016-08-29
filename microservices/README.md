@@ -33,10 +33,10 @@ The servers for the infrastruture are pretty simple thanks to Spring Cloud:
  - aap/pets/status is responsible to give the status of the service. It is designed to return true if the service is alive. 
 
 
- Restful Microservice Definitions
- ---------------------------------
+Restful Microservice Definitions
+---------------------------------
  
- 1. Pet Family Service 
+Pet Family Service 
  
  This service runs in 2001 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
@@ -49,7 +49,7 @@ The servers for the infrastruture are pretty simple thanks to Spring Cloud:
 	        http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974
 
 
-2. Pet Color Service
+Pet Color Service
 
 This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
@@ -62,20 +62,20 @@ This service runs in 2002 port. Use the below link to run the service. We can pa
 	        http://54.164.45.232:2002/aap/pets/colors/1,45,46,47,59
 
 
-3. Pet Clan Service
+Pet Clan Service
 
 This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
       host: {ip}
 	  port: 2003
-	  path: /aap/pets/clans/
+	  path: /aap/pets/clans
 	  family id: 1
 	  Service Url: http://54.164.45.232:2003/aap/pets/clans/1
 	     for multiple Clan we can pass clan ids as comma seperated values
 	        http://54.164.45.232:2003/aap/pets/clans/1,2,3,4,5,6 
 
 
-4. Pet Usage Metric Service
+Pet Usage Metric Service
 
 This service is a POST service, this services allows to post the metric data collected during the request action travelling through the API gateway.
      eg.,
@@ -87,14 +87,17 @@ This service is a POST service, this services allows to post the metric data col
 		
 Spring Actuator Services
 
-These services are provided by Spring Actuator package. These service can be used to understand the Health, Metric details of the services.
+These services are provided by Spring Actuator package. 
+These service can be used to understand the Health, Metric details of the services.
 eg., 
 	Spring Actuator Mapping Service:
+	This service will print the mapping details of the available services.
 		host: {ip}
 		port: 2000
 		path: /aap/mappings
 		Service Url: http://54.164.45.232:2000/aap/mappings
 	Spring Actuator Health Service:
+	This Service will show the health 
 		host: {ip}
 		port: 2000
 		path: /aap/mappings
