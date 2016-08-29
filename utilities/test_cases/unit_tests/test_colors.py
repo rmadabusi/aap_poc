@@ -33,7 +33,6 @@ class InequalityTest(unittest.TestCase):
         service = URL_HEADER_COLORS+GET_COLOR_DETAILS+id
         result = urllib2.urlopen(service).read()
         self.assertNotEqual(assertion_result, ast.literal_eval(result))
-        print "hdsfhjsdhfj"
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(InequalityTest)
