@@ -54,7 +54,7 @@
     </copy>
   </target>
 
-  <target name="download" depends="clone" description="This will do backup, clean and clone together"/>
+  <target name="download" depends="backup,clean,clone" description="This will do backup, clean and clone together"/>
   
   <!-- Front-end Code" -->
   <target name="app_init" description="Creating executable folder">
@@ -188,6 +188,9 @@
   
   <target name="docker_build" depends="all_build" description="This task to create image specified module based for docker">
     <echo message="building the docker service"/>
+	<copy todir="${docker_target}">
+      <fileset dir="${docker_source}"/>
+    </copy>
     <chmod file="${utilities}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
