@@ -24,7 +24,7 @@ class InequalityTest(unittest.TestCase):
         assertion_result["response"] = families_list
         service = URL_HEADER_FAMILY+GET_FAMILY_DETAILS+id
         result = urllib2.urlopen(service).read()
-        print "The input for both excpected function and actual function are same for family service"
+        print "The input for both expected function and actual function are same for family service"
         self.assertEqual(assertion_result, ast.literal_eval(result), "The expected output and actual output are not Same  for family service")
         print "The expected output and actual output are Same for family service"
 
