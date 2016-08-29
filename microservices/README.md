@@ -37,67 +37,68 @@ Restful Microservice Definitions
 ---------------------------------
  
 Pet Family Service 
-This service runs in 2001 port. Use the below link to run the service. We can pass the family ids in the parameter.
+This service runs in 2001 port. Use the below link to run the service. We can pass the family ids in the parameter. 
 
-host: {ip}
-port: 2001
-path: /aap/pets/families/
-family id: 1
-Service Url: http://54.164.45.232:2003/aap/pets/families/1
-For multiple families we can pass family ids as comma seperated values
-http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974
+host: {ip} 
+port: 2001 
+path: /aap/pets/families/ 
+family id: 1 
+Service Url: http://54.164.45.232:2003/aap/pets/families/1 
+For multiple families we can pass family ids as comma seperated values 
+http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974 
 
+Pet Color Service 
+This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter. 
 
-Pet Color Service
-This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
-
-host: {ip}
-port: 2002
-path: /aap/pets/colors/
-color id: 1
-Service Url: http://54.164.45.232:2002/aap/pets/colors/1
-For multiple color we can pass color ids as comma seperated values
-http://54.164.45.232:2002/aap/pets/colors/1,45,46,47,59
-
-
-Pet Clan Service
-This service runs in 2003 port. Use the below link to run the service. We can pass the family ids in the parameter.
-
-host: {ip}
-port: 2003
-path: /aap/pets/clans
-family id: 1
-Service Url: http://54.164.45.232:2003/aap/pets/clans/1
-For multiple Clan we can pass clan ids as comma seperated values
-Service Url: http://54.164.45.232:2003/aap/pets/clans/1,2,3,4,5,6 
+host: {ip} 
+port: 2002 
+path: /aap/pets/colors/ 
+color id: 1 
+Service Url: http://54.164.45.232:2002/aap/pets/colors/1 
+For multiple color we can pass color ids as comma seperated values 
+http://54.164.45.232:2002/aap/pets/colors/1,45,46,47,59 
 
 
-Pet Usage Metric Service
-This service is a POST service, this services allows to post the metric data collected during the request action travelling through the API gateway.
+Pet Clan Service 
+This service runs in 2003 port. Use the below link to run the service. We can pass the family ids in the parameter. 
 
-host: {ip}
-port: 2000
-path: /aap/pets/usagemetrics
-Service Url: http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
+host: {ip} 
+port: 2003 
+path: /aap/pets/clans 
+family id: 1 
+Service Url: http://54.164.45.232:2003/aap/pets/clans/1 
+For multiple Clan we can pass clan ids as comma seperated values 
+Service Url: http://54.164.45.232:2003/aap/pets/clans/1,2,3,4,5,6  
+
+
+Pet Usage Metric Service 
+This service is a POST service, this services allows to post the m etric data collected during the request action travelling through the API gateway. 
+
+host: {ip} 
+port: 2000 
+path: /aap/pets/usagemetrics 
+Service Url: http://54.164.45.232:2000/aap/pets/usagemetrics - POST service  
 		
 		
-Spring Actuator Services
-These services are provided by Spring Actuator package. These service can be used to understand the Health, Metric details of the services.
-
+Spring Actuator Services 
+These services are provided by Spring Actuator package. These service can be used to understand the Health, Metric details of the services. 
 Spring Actuator Mapping Service: This service will print the mapping details of the available services.
-host: {ip}
-port: 2000
-path: /aap/mappings
-Service Url: http://54.164.45.232:2000/aap/mappings.
 
-Spring Actuator Health Service:	This Service will show the health status of the services.
-host: {ip}
-port: 2000
-path: /aap/mappings
-Service Url: http://54.164.45.232:2000/aap/health
+host: {ip} 
+port: 2000 
+path: /aap/mappings 
+Service Url: http://54.164.45.232:2000/aap/mappings. 
 
-Spring Actuator Metrics Service:  This service prints the metric details of the respective services.
-host: {ip}
-port: 2000
-path: /aap/mappings
-Service Url: http://54.164.45.232:2000/aap/metrics.
+Spring Actuator Health Service:	This Service will show the health status of the services. 
+
+host: {ip} 
+port: 2000 
+path: /aap/mappings 
+Service Url: http://54.164.45.232:2000/aap/health 
+
+Spring Actuator Metrics Service:  This service prints the metric details of the respective services. 
+
+host: {ip} 
+port: 2000 
+path: /aap/mappings 
+Service Url: http://54.164.45.232:2000/aap/metrics. 
