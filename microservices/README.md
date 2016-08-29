@@ -1,9 +1,90 @@
-Initial readme for microservices module.
-
-It contains three services,
+-----------------------------------------
+Run Microservices Demo with Docker 
+-----------------------------------------
 	
-1. pet_clan_service
-2. pet_color_service
-3. pet_family_service
-4. pet_usagemetric_service
-5. libs - (contains libraries using in all micro-services)
+This project creates microservice demo system in Docker containers. The services are implemented in Java using SpringBoot & Spring Actuator.
+
+It uses five microservices:
+
+1. Populate Pet Names. 
+2. Populate Family Names for the Pets.
+3. Populate the Colors of the Pets.
+4. Storing Usage Metrics data.
+5. Actuator Services.
+
+Technologies
+--------------
+API Gateway - Flask & Python.
+Microservice  -	Spring Boot, Spring Actuator & Java.
+Data Store - ElasticSearch.
+Metrics UI	- Kibana.
+
+How To Run
+---------------
+The demo can be run with Docker Machine and Docker Compose.
+
+Remarks on the Code
+--------------------
+The servers for the infrastruture are pretty simple thanks to Spring Cloud:
+
+ - aap/pets/clans is the Clans Service to Populate Pet Names, Family Names & Color Names of the respective Pets. 
+ - aap/pets/families is the Family Service to populate the family name/names for the given family id/ids. 
+ - app/pets/colors is the Color Service to populate the color name/names for the given color id/ids.
+ - aap/pets/status is responsible to give the status of the service. It is designed to return true if the service is alive. 
+
+
+ Restful Microservice Definitions
+ ---------------------------------
+ 
+ Pet Family Service 
+ 
+ This service runs in 2001 port. Use the below link to run the service. We can pass the family ids in the parameter.
+  eg.,
+      host: {ip}
+	  port: 2001
+	  path: /aap/pets/families/
+	  family id: 1
+	  Service Url: http://54.164.45.232:2003/aap/pets/families/1
+	     for multiple families we can pass family ids as comma seperated values
+	        http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974
+
+
+
+http://54.164.45.232:2001/aap/pets/families/1
+
+
+Pet Color Service
+
+This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
+  eg.,
+      host: {ip}
+	  port: 2002
+	  path: /aap/pets/colors/
+	  color id: 1
+	  Service Url: http://54.164.45.232:2002/aap/pets/colors/1
+	     for multiple color we can pass color ids as comma seperated values
+	        http://54.164.45.232:2002/aap/pets/colors/1,45,46,47,59
+
+
+Pet Clan Service
+
+This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
+  eg.,
+      host: {ip}
+	  port: 2003
+	  path: /aap/pets/clans/
+	  family id: 1
+	  Service Url: http://54.164.45.232:2003/aap/pets/clans/1
+	     for multiple Clan we can pass clan ids as comma seperated values
+	        http://54.164.45.232:2003/aap/pets/clans/1,2,3,4,5,6 
+
+
+Pet Usage Metric Service
+
+This service is a POST service, this services allows to post the metric data collected during the request action travelling through the API gateway.
+     eg.,
+      host: {ip}
+	  port: 2000
+	  path: /aap/pets/usagemetrics
+http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
+
