@@ -1,6 +1,9 @@
 #!/bin/sh
 #!/bin/bash
 
+HOME=${pwd}
+cd $HOME
+
 echo "Driver scripts execution started... "
 
 echo "Pre-requistics installation started... "
@@ -60,7 +63,7 @@ echo "Pre-requistics installation completed"
 
 echo "Start executing Continuous Integration...."
 cd utilities/continuous_integration/
-ant run
+ant run -Dhome=$HOME
 echo "Everything installed. Now containers are running, check below for running containers"
 sudo docker ps
 
