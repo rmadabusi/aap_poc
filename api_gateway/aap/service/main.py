@@ -127,7 +127,7 @@ def api_cache_clear():
     result = get_cache_clear(cache)
     return jsonify(result)
 
-#The clear cache API allows to clear all caches
+#For getting clan details based on clan ids
 @app.route('/clan/clan_id/<id>', methods=["GET"])
 def api_clan_details(id):
     result = get_clan_details(cache)
