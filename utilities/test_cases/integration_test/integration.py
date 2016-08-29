@@ -93,7 +93,8 @@ class comparision(object):
             <td align="center">"""+self.responseComparision_status+"""</td>
             <td>"""+self.responseComparision_comments+"""</td>          
         </tr>      
-        </table>        
+        </table>    
+        File Path:    
         </html>"""
         
         f.write(message)
