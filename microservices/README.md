@@ -49,10 +49,6 @@ The servers for the infrastruture are pretty simple thanks to Spring Cloud:
 	        http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974
 
 
-
-http://54.164.45.232:2001/aap/pets/families/1
-
-
 Pet Color Service
 
 This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
@@ -86,5 +82,5 @@ This service is a POST service, this services allows to post the metric data col
       host: {ip}
 	  port: 2000
 	  path: /aap/pets/usagemetrics
-http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
+		http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
 
