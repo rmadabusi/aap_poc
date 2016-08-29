@@ -1,5 +1,3 @@
-Initial ReadMe for Utilities goes here
-
 It contains following utils:
 
 1. Continue Integration
