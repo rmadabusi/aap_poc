@@ -33,7 +33,7 @@ function build() {
 	DIR=$HOME_DIR/$MODULE
 	
 	if [ "$MODULE" = "pet_clan_service" ] || [ "$MODULE" = "pet_family_service" ] || [ "$MODULE" = "pet_color_service" ] || [ "$MODULE" = "pet_usagemetric_service" ] ; then
-		cd $HOME_DIR/micro_services/$MODULE
+		DIR=$HOME_DIR/micro_services/$MODULE
 	fi
 	
 	cd $DIR
