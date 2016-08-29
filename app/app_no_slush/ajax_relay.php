@@ -10,8 +10,8 @@ date_default_timezone_set('America/New_York');
 * For new environments need to update the below array.
 */
 $endPointArray = array(
-  'dev' => 'http://54.164.45.232:3000',
-  'prod' => 'http://54.164.45.232:3000'
+  'dev' => 'http://localhost:3000',
+  'prod' => 'http://localhost:3000'
 );
 $envValue = getDeploymentEnvDetail();
 $endPoint = (isset($endPointArray[$envValue])) ? $endPointArray[$envValue] : $endPointArray['dev'];

@@ -78,7 +78,8 @@ function start() {
 	sudo docker run --net="host" $PORTS -dt $MODULE $EXTRA_ARGS
 	
 	if [ "$MODULE" = "elasticsearch" ]; then
-		sleep 120s
+		echo "Waiting 60s..."
+		sleep 60s
 	fi
 	echo "Function 'run': Running $MODULE completed"
 }
@@ -92,7 +93,12 @@ function stop() {
 	if [ -z "$CONTAINER_ID" ]; then 
 		echo "$MODULE is not running"
 	else 
+		sudo docker stop $CONTAINER_ID
+		sleep 1s
 		sudo docker kill $CONTAINER_ID
+		sleep 1s
+		sudo docker stop $CONTAINER_ID
+		sleep 1s
 	fi
 	echo "Function 'stop': Running '$MODULE' completed"
 }
