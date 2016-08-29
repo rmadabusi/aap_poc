@@ -36,7 +36,7 @@ The servers for the infrastruture are pretty simple thanks to Spring Cloud:
  Restful Microservice Definitions
  ---------------------------------
  
- Pet Family Service 
+ 1. Pet Family Service 
  
  This service runs in 2001 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
@@ -49,7 +49,7 @@ The servers for the infrastruture are pretty simple thanks to Spring Cloud:
 	        http://54.164.45.232:2001/aap/pets/families/1,970,971,972,973,974
 
 
-Pet Color Service
+2. Pet Color Service
 
 This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
@@ -62,7 +62,7 @@ This service runs in 2002 port. Use the below link to run the service. We can pa
 	        http://54.164.45.232:2002/aap/pets/colors/1,45,46,47,59
 
 
-Pet Clan Service
+3. Pet Clan Service
 
 This service runs in 2002 port. Use the below link to run the service. We can pass the family ids in the parameter.
   eg.,
@@ -75,12 +75,32 @@ This service runs in 2002 port. Use the below link to run the service. We can pa
 	        http://54.164.45.232:2003/aap/pets/clans/1,2,3,4,5,6 
 
 
-Pet Usage Metric Service
+4. Pet Usage Metric Service
 
 This service is a POST service, this services allows to post the metric data collected during the request action travelling through the API gateway.
      eg.,
       host: {ip}
 	  port: 2000
 	  path: /aap/pets/usagemetrics
-		http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
+		Service Url: http://54.164.45.232:2000/aap/pets/usagemetrics - POST service 
+		
+		
+Spring Actuator Services
 
+These services are provided by Spring Actuator package. These service can be used to understand the Health, Metric details of the services.
+eg., 
+	Spring Actuator Mapping Service:
+		host: {ip}
+		port: 2000
+		path: /aap/mappings
+		Service Url: http://54.164.45.232:2000/aap/mappings
+	Spring Actuator Health Service:
+		host: {ip}
+		port: 2000
+		path: /aap/mappings
+		Service Url: http://54.164.45.232:2000/aap/health
+	Spring Actuator Metrics Service:
+		host: {ip}
+		port: 2000
+		path: /aap/mappings
+		Service Url: http://54.164.45.232:2000/aap/metrics
