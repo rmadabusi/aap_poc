@@ -193,7 +193,7 @@
     <echo message="Stoping the docker service"/>
     <chmod file="${docker_target}/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="stop"/>
       <arg value="all"/>
       <arg value="${docker_target}"/>
