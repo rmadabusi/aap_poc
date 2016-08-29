@@ -4,8 +4,6 @@
 
   <target name="home_clean">
     <echo message="Cleaning the home directory."/>
-    <delete dir="${temp}"/>
-    <delete dir="${target}"/>
   </target>
 
   <target name="init" depends="home_clean">
