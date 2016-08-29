@@ -4,7 +4,7 @@ MAINTAINER TRESELLE
 ###  Installation of apache2 package ###
 RUN apt-get update
 RUN apt-get -y install apache2 php5 
-RUN apt-get -y install libapache2-mod-php5 curl php5-curl
+RUN apt-get -y install libapache2-mod-php5 curl php5-curl libcurl3 libcurl3-dev
 
 ###  Installation of Nodejs and npm packages  ###
 RUN apt-get -y install nodejs ruby-full npm
