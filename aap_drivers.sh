@@ -2,7 +2,7 @@
 #!/bin/bash
 
 echo "Driver scripts execution started... "
-HOME=${pwd}
+HOME=$(pwd)
 cd $HOME
 
 echo "Pre-requistics installation started... "
@@ -69,3 +69,5 @@ sudo docker ps
 echo "Driver scripts execution completed"
 
 exit 
+
+#### END SCRIPT  ###
