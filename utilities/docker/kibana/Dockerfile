@@ -1,6 +1,5 @@
 FROM java:8
 ###### KIBANA SETUP ######
-#For constant name of Kibana
 ENV KIBANA_PKG_NAME kibana-4.5.4-linux-x64
 
 # Run command to download, extract and move specified directory setup

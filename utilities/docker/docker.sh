@@ -1,14 +1,16 @@
 #!/bin/bash
-#!/bin/sh
-#############################################################################################################################################
-##### Script Name: Docker Build and Run Script 																					       ######
-##### Purpose: The purpose of the script to build, start, stop build, start, stop images for one or many modules into Docker container. ######
-#############################################################################################################################################
-
+########################################
+##### Docker Build and Run Script ######
+########################################
 #set -x
 HOME_DIR=$(pwd)
 TASK=$1
 MODULES=$2
+
+
+
+cd $HOME_DIR
+
 
 
 #Build docker image for given a module
@@ -21,6 +23,7 @@ function build() {
 		cd $HOME_DIR/micro_services/$MODULE
 	fi
 	
+	cd $DIR
 	# BUILD COMMAND
 	sudo docker build -t $MODULE .
 	echo "Function 'build': Running $MODULE completed"
@@ -58,7 +61,8 @@ function start() {
 	
 	##RUN COMMAND
 	echo "Command: sudo docker run -d $PORTS $MODULE ."
-	sudo docker run -d $PORTS app $EXTRA_ARGS
+	#sudo docker run --net="host" --name="$MODULE" -d $PORTS -t $MODULE $EXTRA_ARGS
+	sudo docker run --net="host" -d $PORTS -t $MODULE $EXTRA_ARGS
 	
 	echo "Function 'run': Running $MODULE completed"
 }
@@ -95,9 +99,6 @@ function reverseArr() {
 ###### SCRIPT STARTS HERE #####
 ###############################
 
-
-cd $HOME_DIR
-
 #Validate or intialize modules
 if [ "$MODULES" = "all" ]; then
 	echo "Adding all services into array to perform task"
@@ -107,9 +108,6 @@ if [ "$MODULES" = "all" ]; then
 		echo "Reverse services to kill task in top-bottom order"
 #		arr1=$(reverseArr $arr)
 		declare -a arr=( "app" "api_gateway" "pet_usagemetric_service" "pet_color_service" "pet_family_service" "pet_clan_service" "kibana" "elasticsearch" )
-	
-	done
-	
 	fi
 else 
 	declare -a arr=( "$MODULES" )
@@ -125,7 +123,6 @@ do
 	if [ -z "$MODULE" ]; then 
 		echo "**************************** Module: $MODULE running wrong ****************************"
 	else
-		echo " in -z"
 		if [ "$TASK" = "build" ]; then
 			build $MODULE
 		elif [ "$TASK" = "start" ]; then
