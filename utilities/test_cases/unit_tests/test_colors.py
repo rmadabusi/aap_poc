@@ -25,7 +25,7 @@ class InequalityTest(unittest.TestCase):
         assertion_result["response"] = colors_list
         service = URL_HEADER_COLORS+GET_COLOR_DETAILS+id
         result = urllib2.urlopen(service).read()
-        print "The input for both excpected function and actual function are same for colors service"
+        print "The input for both expected function and actual function are same for colors service"
         self.assertEqual(assertion_result, ast.literal_eval(result))
         print "The expected output and actual output are Same for colors service"
 

@@ -62,7 +62,7 @@ function start() {
 		PORTS='-p 2000:2000'
 	elif [ "$MODULE" = "api_gateway" ]; then
 		PORTS='-p 3000:3000'
-	elif [ '$MODULE' = 'app' ]; then 
+	elif [ "$MODULE" = "app" ]; then 
 		PORTS='-p 80:80'
 		EXTRA_ARGS='/usr/sbin/apache2ctl -D FOREGROUND'
 	else
@@ -78,7 +78,7 @@ function start() {
 	sudo docker run --net="host" $PORTS -dt $MODULE $EXTRA_ARGS
 	
 	if [ "$MODULE" = "elasticsearch" ]; then
-		sleep 300s
+		sleep 120s
 	fi
 	echo "Function 'run': Running $MODULE completed"
 }

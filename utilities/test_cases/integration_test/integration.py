@@ -28,7 +28,7 @@ class comparision(object):
     '''Test scenarios'''     
     def testScenario(self):         
         self.testScenario1 =  "1. To check the response data availability"
-        self.testScenario2 =  "2. Comparing Gateway_Api and Microservice response results"  
+        self.testScenario2 =  "2. Comparing Gateway_Api and Microservice response results"          
         print "Test scenarios\n"+self.testScenario1+"\n"+self.testScenario2
         print "\nTest Result"
         self.testResult()   
@@ -67,10 +67,10 @@ class comparision(object):
             self.responseComparision_comments =  "Gateway_Api and Microservice responses are not same"
             self.responseComparision_status = "False"
         print "\n"+self.testScenario2+"\nComments :"+self.responseComparision_comments +"\nStatus   :"+self.responseComparision_status
-             
+                  
     '''Test case result Design'''       
     def htmlreport(self):        
-        f = open('../integrationTestcaseReport.html','w')        
+        f = open('../integration_test/integrationTestcaseReport.html','w')        
         message = """<html>
         <head></head>
         <body>
@@ -94,12 +94,12 @@ class comparision(object):
             <td>"""+self.responseComparision_comments+"""</td>          
         </tr>      
         </table>    
-        File Path:    
+        <p>File name : utilities/test_cases/integration_test/integration.py           
         </html>"""
         
         f.write(message)
         f.close()
-        print "\nProcess completed"     
+        print "\nTestcase report generated location: utilities/test_cases/integration_test/integrationTestcaseReport.html\nProcess completed."     
         
 runner = comparision()
 runner.testScenario()
