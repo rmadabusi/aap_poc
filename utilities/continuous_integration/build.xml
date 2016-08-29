@@ -3,6 +3,7 @@
   <property file="build.properties"/>
 
   <target name="home_clean">
+    <echo message="Cleaning the home directory"/>
     <delete dir="${source}"/>
     <delete dir="${temp}"/>
     <delete dir="${target}"/>
@@ -15,10 +16,17 @@
   </target>
 
   <target name="backup" depends="init" description="This will create backup for the existing source code">
+    <echo message="Backup the source code and target"/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
-      <arg value="${home}"/>
+      <arg value="${source}"/>
+      <arg value="2"/>
+    </exec>
+	<exec executable="/bin/bash">
+      <arg value="${script.location}${main.script}"/>
+      <arg value="${script.location}"/>
+      <arg value="${target}"/>
       <arg value="2"/>
     </exec>
   </target>
@@ -33,6 +41,7 @@
   </target>
 
   <target name="clone" description="This will clone the project from the git location">
+    <echo message="Clone the code from github repository"/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -79,9 +88,10 @@
     </ant>
     <copy todir="${utilities_dao_dist}">
       <fileset dir="${utilities_dao_build}/dist/"/>
+	  <fileset dir="${utilities_dao_build}/exec_util/"/>
     </copy>
     <copy todir="${utilities_dao_dist}/inputs">
-      <fileset dir="${utilities_dao_build}/dist/"/>
+      <fileset dir="${utilities_dao_build}/inputs/"/>
     </copy>
   </target>
 
@@ -97,6 +107,7 @@
     </ant>
     <copy todir="${families_dist}">
       <fileset dir="${families_src_build}/dist/"/>
+	  <fileset dir="${families_src_build}/exec_util/"/>
     </copy>
   </target>
   
@@ -111,10 +122,74 @@
     </ant>
     <copy todir="${colors_dist}">
       <fileset dir="${colors_src_build}/dist/"/>
+	  <fileset dir="${colors_src_build}/exec_util/"/>
+    </copy>
+  </target>
+
+  <!-- pet clan -->
+  <target name="clan_init" description="Creating executable folder">
+    <mkdir dir="${clan_dist}"/>
+  </target>
+
+  <target name="clan_build" depends="clan_init" description="build and move the files to lib folder">
+    <ant antfile="build.xml" dir="${clan_src_build}"
+            inheritAll="true" inheritRefs="true" >
+    </ant>
+    <copy todir="${clan_dist}">
+      <fileset dir="${clan_src_build}/dist/"/>
+	  <fileset dir="${clan_src_build}/exec_util/"/>
     </copy>
   </target>
   
-  <!-- all -->
-  <target name="all_build" depends="download,app_build,gateway_build,dao_build,families_build,colors_build" description="This task will build together"/>
+  <!-- pet usage metrics -->
+  <target name="usage_metrics_init" description="Creating executable folder">
+    <mkdir dir="${usage_metrics_dist}"/>
+  </target>
 
+  <target name="usage_metrics_build" depends="usage_metrics_init" description="build and move the files to lib folder">
+    <ant antfile="build.xml" dir="${usage_metrics_src_build}"
+            inheritAll="true" inheritRefs="true" >
+    </ant>
+    <copy todir="${usage_metrics_dist}">
+      <fileset dir="${usage_metrics_src_build}/dist/"/>
+	  <fileset dir="${usage_metrics_src_build}/exec_util/"/>
+    </copy>
+  </target>  
+  
+  <!-- all -->
+  <target name="all_build" depends="download,app_build,gateway_build,dao_build,families_build,colors_build,clan_build,usage_metrics_build" description="This task will build together"/>
+
+  <target name="docker_stop" depends="docker_build" description="This task to create image specified module based for docker">
+    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
+    <exec executable="/bin/bash">
+      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="stop"/>
+    </exec>    
+  </target>
+  
+  <target name="docker_build" depends="all_build" description="This task to create image specified module based for docker">
+    <exec executable="/bin/bash">
+      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="build"/>
+    </exec>    
+  </target>
+
+  <target name="docker_start" depends="docker_stop" description="This task to create image specified module based for docker">
+    <exec executable="/bin/bash">
+      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="stop"/>
+    </exec>    
+  </target>
+  
+  <target name="unit_testcase_build">
+    <exec executable="/bin/bash">
+      <arg value="${utilities}/unit_tests/unit_test_case.sh"/>
+    </exec>
+  </target>
+
+  <target name="integration_testcase_build">
+    <exec executable="/bin/bash">
+      <arg value="${utilities}/unit_tests/integration_test_case.sh"/>
+    </exec>
+  </target>  
 </project>
