@@ -130,10 +130,10 @@ def api_cache_clear():
 #For getting clan details based on clan ids
 @app.route('/clan/clan_id/<id>', methods=["GET"])
 def api_clan_details(id):
-    result = get_clan_details(cache)
+    result = get_clan_details(id,cache)
     return jsonify(result)
 
 
 #Main Function
 if __name__ == '__main__':
-    app.run(host="localhost", port=3000)
+    app.run(host="0.0.0.0", port=3000)
