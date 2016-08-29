@@ -3,12 +3,7 @@
 '''
 import urllib2
 import json
-
-urlheader_backend = "http://54.164.45.232:2001/"
-urlheader_gateway = "http://54.164.45.232:3000/"
-
-backend_service = "aap/pets/families/1"
-gateway_service = "pets/families/1"
+from utilities.test_cases.config.integrationtest_config import urlheader_backend, urlheader_gateway, backend_service, gateway_service
 
 class comparision(object):
     
