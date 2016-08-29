@@ -209,9 +209,9 @@
       <fileset dir="${docker_source}"/>
     </copy>
 
-    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
+    <chmod file="${docker_target}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker/docker.sh"/>
       <arg value="build"/>
       <arg value="all"/>
       <arg value="${docker_source}"/>
