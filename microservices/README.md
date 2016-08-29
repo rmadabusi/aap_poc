@@ -6,7 +6,7 @@ This project creates microservice demo system in Docker containers. The services
 
 It uses five microservices:
 
-1. Populate Pet Names. 
+1. Populate Clan Names. 
 2. Populate Family Names for the Pets.
 3. Populate the Colors of the Pets.
 4. Storing Usage Metrics data.
