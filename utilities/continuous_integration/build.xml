@@ -204,6 +204,9 @@
     <copy todir="${docker_target}">
       <fileset dir="${docker_source}"/>
     </copy>
+	<copy todir="${docker_target}">
+      <fileset dir="${docker_source}/micro_services/"/>
+    </copy>
     <chmod file="${utilities}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
