@@ -59,6 +59,13 @@ if(in_array($_GET['path'], $postMethodServices)) {
 $query_str = parse_url($_GET['path'], PHP_URL_QUERY);
 parse_str($query_str, $query_params);
 
+/* File Get Content */
+function getServiceResponseFileGetContent ($request) {
+  $output = file_get_contents($request);
+  responseOutput($output);
+}
+getServiceResponseFileGetContent($request);
+
 /* Function to get the response from service */
 getServiceResponse($request);
 
