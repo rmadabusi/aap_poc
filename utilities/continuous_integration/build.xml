@@ -67,7 +67,7 @@
     </copy>
   </target>
 
-  <target name="download" depends="backup,clean,clone" description="This will do backup, clean and clone together"/>
+  <target name="download" depends="backup,clone" description="This will do backup, clean and clone together"/>
   
   <!-- Front-end Code" -->
   <target name="app_init" description="Creating executable folder">
