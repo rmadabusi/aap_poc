@@ -1,17 +1,14 @@
 '''
-Created on Aug 25, 2016
-
 @author: Treselle
 '''
 import urllib2
 import json
 
 urlheader_backend = "http://54.164.45.232:2001/"
-#urlheader_gateway = "http://54.164.45.232:3000/"
-urlheader_gateway = "http://127.0.0.1:3000/"
+urlheader_gateway = "http://54.164.45.232:3000/"
 
 backend_service = "aap/pets/families/1"
-gateway_service = "/pets/families/1"
+gateway_service = "pets/families/1"
 
 class comparision(object):
     
@@ -23,20 +20,22 @@ class comparision(object):
     
     '''Taking Backend service response'''
     def backendService(self):
-        self.Step1 = "Step 1: Backend service processing"
-        microservice_response = urllib2.urlopen(urlheader_backend+backend_service)
+        self.Step1 = "Step 1: Processing Microservice response"
+        microservice_response = urllib2.urlopen(urlheader_backend+backend_service)       
         self.backendService_data = json.load(microservice_response)       
     
     '''Taking Python service response'''
     def gatewayservice(self):
-        self.Step2 = "Step 2: Gateway Service service processing"
+        self.Step2 = "Step 2: Processing Gateway Service service"
         microservice_response = urllib2.urlopen(urlheader_gateway+gateway_service)
         self.gatewayservice_data = json.load(microservice_response)            
     
     '''Test scenarios'''     
     def testScenario(self):         
-        self.testScenario1 =  "Response data availability"
-        self.testScenario2 =  "Comparing the service results"  
+        self.testScenario1 =  "1. To check the response data availability"
+        self.testScenario2 =  "2. Comparing Gateway_Api and Microservice response results"  
+        print "Test scenarios\n"+self.testScenario1+"\n"+self.testScenario2
+        print "\nTest Result"
         self.testResult()   
              
     '''Test cases'''    
@@ -48,33 +47,35 @@ class comparision(object):
     '''To check the response data availability for gatewayService and backendService'''       
     def responseEmpty(self):       
         if len(self.gatewayservice_data['response']) == 0 and len(self.backendService_data['response']) == 0:
-            self.responseEmpty_comments = ("Gateway and Back-end services are empty")
+            self.responseEmpty_comments = ("Gateway_Api and Microservice responses are empty")
             self.responseEmpty_status = "False"
             
         elif len(self.gatewayservice_data['response']) == 0 or len(self.backendService_data['response']) == 0:
             if len(self.gatewayservice_data['response']) == 0:                
-                self.responseEmpty_comments = ("Gateway service is empty")
+                self.responseEmpty_comments = ("Gateway_Api response is empty")
                 self.responseEmpty_status = "False"
             
             elif len(self.backendService_data['response']) == 0:                
-                self.responseEmpty_comments = ("Back-end service is empty")
+                self.responseEmpty_comments = ("Microservice response is empty")
                 self.responseEmpty_status = "False"            
         else:
-            self.responseEmpty_comments = ("Gateway and Back-end services are not empty")
-            self.responseEmpty_status = "True"
+            self.responseEmpty_comments = ("Gateway_Api and Microservice response are not empty")
+            self.responseEmpty_status = "True"    
+        print "\n"+self.testScenario1+"\nComments :"+self.responseEmpty_comments+"\nStatus   :"+self.responseEmpty_status
             
     '''Comparing the response data of gatewayservice and backendService'''
     def responseComparision(self):        
         if sorted(self.gatewayservice_data.items()) == sorted(self.backendService_data.items()):
-            self.responseComparision_comments =  "Both the response are same"
+            self.responseComparision_comments =  "Gateway_Api and Microservice responses are same"
             self.responseComparision_status = "True"
         else:
-            self.responseComparision_comments =  "Both the response are not same"
+            self.responseComparision_comments =  "Gateway_Api and Microservice responses are not same"
             self.responseComparision_status = "False"
-    
+        print "\n"+self.testScenario2+"\nComments :"+self.responseComparision_comments +"\nStatus   :"+self.responseComparision_status
+             
     '''Test case result Design'''       
     def htmlreport(self):        
-        f = open('../integration_test_report.html','w')
+        f = open('../integrationTestcaseReport.html','w')        
         message = """<html>
         <head></head>
         <body>
@@ -102,7 +103,7 @@ class comparision(object):
         
         f.write(message)
         f.close()
-        print "Process completed"     
+        print "\nProcess completed"     
         
 runner = comparision()
 runner.testScenario()
