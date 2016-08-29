@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>AAP PoC</title>
 
+    <!-- build:css(.tmp) assets/stylesheets/output.css -->
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/styles.css">
+    <!-- endbuild -->
 
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -16,6 +18,7 @@
     <div ng-view ng-cloak></div>
   </body>
 
+  <!--build:js scripts/libraries.js-->
   <script src="assets/library/jquery/jquery.js"></script>
   <script src="assets/library/angular.js"></script>
   <script src="assets/library/angular-route.js"></script>
@@ -24,10 +27,13 @@
   <script src="assets/library/angular-resource.js"></script>
   <script src="assets/library/underscore-min.js"></script>
   <script src="assets/library/jquery/jquery-ui.js"></script>
+  <!-- endbuild -->
 
   <!-- App js & Config js -->
   <script src="app.js"></script>
   <script src="config.js"></script>
+
+  <!--build:js scripts/output.js-->
   <script src="routes.js"></script>
   <script src="rootController.js"></script>
 
@@ -58,5 +64,6 @@
   <script src="aap-widgets/usage-metrics-widget/usageMetricsController.js"></script>
   <!-- <script src="aap-widgets/usage-metrics-widget/usageMetricsDirective.js"></script> -->
   <script src="aap-widgets/usage-metrics-widget/usageMetricsService.js"></script>
+  <!-- endbuild -->
 
 </html> 
