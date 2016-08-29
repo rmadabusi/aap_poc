@@ -3,6 +3,7 @@
 '''
 import urllib2
 import json
+from datetime import datetime
 from api_gateway.test_cases.config.integrationtest_config import urlheader_backend, urlheader_gateway, backend_service, gateway_service
 
 class comparision(object):
@@ -12,7 +13,8 @@ class comparision(object):
         print "Process started"
         self.backendService()
         self.gatewayservice()
-    
+        self.date_time  = datetime.now()
+
     '''Taking Backend service response'''
     def backendService(self):
         self.Step1 = "Step 1: Processing Microservice response"
@@ -70,13 +72,16 @@ class comparision(object):
                   
     '''Test case result Design'''       
     def htmlreport(self):        
-        f = open('../integration_test/integrationTestcaseReport.html','w')        
+        f = open('../integration_test/integration_test_report.html','w')
         message = """<html>
         <head></head>
         <body>
         <table style="width:50%" border= 1px>
         <tr>
-            <th align="center" colspan="3">Integration Testing Result</th>
+            <th colspan="3">
+              <span style="float: left;">Integration Testing Result</span>
+              <span style="float: right;">Date : """+str(self.date_time)+"""</span>
+            </th>
         </tr>
         <tr>
             <td><b>Test Scenario</td>
@@ -92,7 +97,8 @@ class comparision(object):
             <td>"""+self.testScenario2+"""</td>  
             <td align="center">"""+self.responseComparision_status+"""</td>
             <td>"""+self.responseComparision_comments+"""</td>          
-        </tr>      
+        </tr>
+
         </table>    
         <p>File name : utilities/test_cases/integration_test/integration.py           
         </html>"""
