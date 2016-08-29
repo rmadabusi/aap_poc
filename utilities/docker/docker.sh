@@ -60,10 +60,13 @@ function start() {
 	
 	
 	##RUN COMMAND
-	echo "Command: sudo docker run -d $PORTS $MODULE ."
+	echo "Command: sudo docker run --net="host" -d $PORTS -t $MODULE $EXTRA_ARGS"
 	#sudo docker run --net="host" --name="$MODULE" -d $PORTS -t $MODULE $EXTRA_ARGS
-	sudo docker run --net="host" -d $PORTS -t $MODULE $EXTRA_ARGS
+	sudo docker run --net="host" $PORTS -dt $MODULE $EXTRA_ARGS
 	
+	if [ "$MODULE" = "elasticsearch" ]; then
+		sleep 300s
+	fi
 	echo "Function 'run': Running $MODULE completed"
 }
 
