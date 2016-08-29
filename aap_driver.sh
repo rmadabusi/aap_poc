@@ -3,7 +3,7 @@
 
 HOME=${pwd}
 cd $HOME
-
+echo $HOME
 echo "Driver scripts execution started... "
 
 echo "Pre-requistics installation started... "
