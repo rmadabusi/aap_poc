@@ -1,22 +1,18 @@
 #!/bin/sh
 #!/bin/bash
-
 ########################################################
 #                Step up variables                     #
 ########################################################
 envt=$1
 path=$2
 action=$3
-
 echo "Environments : " $envt
 echo "Project path : " $path
 echo "Action       : " $action
-
 cd $envt
 ########################################################
 #                Action                                #
 ########################################################
-
 main()
 {
   case "$action" in
@@ -30,5 +26,4 @@ main()
     ;;
 esac
 }
-
 main $action $path
