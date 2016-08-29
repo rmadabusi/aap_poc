@@ -3,11 +3,24 @@
 ##### Docker Build and Run Script ######
 ########################################
 #set -x
-HOME_DIR=$(pwd)
+#HOME_DIR=$(pwd)
+HOME_DIR=$3
 TASK=$1
 MODULES=$2
 
+if [ -z "$HOME_DIR" ]; then
+	HOME_DIR=$(pwd)
+fi
 
+if [ -z "$TASK" ]; then
+	echo "Pass valid task name as first argument. <BUILD/START/STOP>"
+	exit
+fi
+
+if [ -z "$MODULES" ]; then
+	echo "Pass valid module name as second argument. <module_name or all >"
+	exit
+fi
 
 cd $HOME_DIR
 
