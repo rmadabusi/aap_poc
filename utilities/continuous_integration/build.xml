@@ -4,6 +4,7 @@
 
   <target name="home_clean">
     <echo message="Cleaning the home directory."/>
+	<delete dir="${temp}"/>
   </target>
 
   <target name="init" depends="home_clean">
@@ -45,7 +46,7 @@
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
-      <arg value="${source}"/>
+      <arg value="${target}"/>
       <arg value="1"/>
     </exec>
   </target>
@@ -67,7 +68,7 @@
     </copy>
   </target>
 
-  <target name="download" depends="backup,clone" description="This will do backup, clean and clone together"/>
+  <target name="download" depends="backup,clone,clean" description="This will do backup, clean and clone together"/>
   
   <!-- Front-end Code" -->
   <target name="app_init" description="Creating executable folder">
@@ -201,12 +202,13 @@
   
   <target name="docker_build" depends="all_build" description="This task to create image specified module based for docker">
     <echo message="building the docker service"/>
+	<copy todir="${docker_source}">
+      <fileset dir="${docker_source}/micro_services/"/>
+    </copy>
     <copy todir="${docker_target}">
       <fileset dir="${docker_source}"/>
     </copy>
-	<copy todir="${docker_target}">
-      <fileset dir="${docker_source}/micro_services/"/>
-    </copy>
+
     <chmod file="${utilities}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
