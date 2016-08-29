@@ -1,6 +1,6 @@
 # AAP PoC details
 
-We developed responsive App using Angularjs, and implemented the search module using Widget framework and Directives concepts.
+We developed a responsive App using Angularjs, and implemented the search module using Widget framework and Directives concepts.
 
 Widgets : Widget is an reusable component and having easily configure properties and option. It will rendered for multiple modules.
 

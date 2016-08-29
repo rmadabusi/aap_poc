@@ -59,3 +59,11 @@ def pet_usage_metrics(params):
     response = urllib2.urlopen(req, json.dumps(data)).read()
     return response
 #----------------------------------------------------------------------------------------------------------------------#
+
+#------------------------------------------#The clear cache API allows to clear all caches-----------------------------#
+def get_cache_clear(cache):
+    status={}
+    cache.clear()
+    status["response"]={"status":"Successfully_cache_cleared"}
+    return status
+#----------------------------------------------------------------------------------------------------------------------#
