@@ -1,7 +1,7 @@
 from __future__ import division
 from flask import Flask, request,jsonify
 import json
-from api_gateway.aap.service.implementations.main_services import get_status, get_family_details, get_colors_details, pet_usage_metrics, get_cache_clear
+from api_gateway.aap.service.implementations.main_services import get_status, get_family_details, get_colors_details, pet_usage_metrics, get_cache_clear, get_clan_details
 from urllib import unquote
 from flasgger import Swagger
 from flask.ext.cache import Cache
@@ -125,6 +125,12 @@ def dsn_api_entity_find_raw():
 @app.route('/pets/clear_cache/', methods=["GET"])
 def api_cache_clear():
     result = get_cache_clear(cache)
+    return jsonify(result)
+
+#The clear cache API allows to clear all caches
+@app.route('/clan/clan_id/<id', methods=["GET"])
+def api_clan_details(id):
+    result = get_clan_details(cache)
     return jsonify(result)
 
 

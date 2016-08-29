@@ -13,5 +13,7 @@ STATUS = "/aap/status"
 GET_FAMILY_DETAILS = "/aap/pets/families/"
 #Color Services
 GET_COLOR_DETAILS = "/aap/pets/colors/"
+#Clan Services
+GET_CLAN_DETAILS = "/pets/clans/"
 #UM Services
 GET_UM_DETAILS = '/aap/pets/usagemetrics'
