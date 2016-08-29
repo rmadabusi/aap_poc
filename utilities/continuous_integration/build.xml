@@ -3,27 +3,28 @@
   <property file="build.properties"/>
 
   <target name="home_clean">
-    <echo message="Cleaning the home directory"/>
+    <echo message="Cleaning the home directory."/>
     <delete dir="${source}"/>
     <delete dir="${temp}"/>
     <delete dir="${target}"/>
   </target>
 
   <target name="init" depends="home_clean">
+    <echo message="Setup enviornment"/>
     <mkdir dir="${archives}"/>
     <mkdir dir="${source}"/>
     <mkdir dir="${temp}"/>
   </target>
 
   <target name="backup" depends="init" description="This will create backup for the existing source code">
-    <echo message="Backup the source code and target"/>
+    <echo message="Backup the source code and target."/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
       <arg value="${source}"/>
       <arg value="2"/>
     </exec>
-	<exec executable="/bin/bash">
+    <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
       <arg value="${target}"/>
@@ -31,7 +32,7 @@
     </exec>
   </target>
 
-  <target name="clean" description="This will clean the source code directory">
+  <target name="clean" description="This will clean the source code directory.">
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -41,7 +42,7 @@
   </target>
 
   <target name="clone" description="This will clone the project from the git location">
-    <echo message="Clone the code from github repository"/>
+    <echo message="Clone the code from github repository."/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -61,8 +62,9 @@
   </target>
   
   <target name="app_build" depends="app_init" description="build and move the files to executable folder">
+    <echo message="Building app code base v1."/>
     <copy todir="${app_dist}">
-      <fileset dir="${app_src}"/>
+      <fileset dir="${app_src}/app_no_slush/"/>
     </copy>
   </target>
 
@@ -72,6 +74,7 @@
   </target>
 
   <target name="gateway_build" depends="gateway_init" description="build and move the files to executable folder">
+    <echo message="Building gateway code base."/>
     <copy todir="${gateway_dist}">
       <fileset dir="${gateway_src}"/>
     </copy>
@@ -83,13 +86,18 @@
   </target>
 
   <target name="dao_build" description="build and move the files to lib folder">
+    <echo message="Building DAO code base."/>
     <ant antfile="build.xml" dir="${utilities_dao_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+	
+	<echo message="Copy DAO code base."/>
     <copy todir="${utilities_dao_dist}">
       <fileset dir="${utilities_dao_build}/dist/"/>
-	  <fileset dir="${utilities_dao_build}/exec_util/"/>
+      <fileset dir="${utilities_dao_build}/exec_util/"/>
     </copy>
+	
+	<echo message="Copy DAO related input csv's."/>
     <copy todir="${utilities_dao_dist}/inputs">
       <fileset dir="${utilities_dao_build}/inputs/"/>
     </copy>
@@ -102,12 +110,14 @@
   </target>
 
   <target name="families_build" depends="families_init" description="build and move the files to lib folder">
+    <echo message="Building micro services pet family"/>
     <ant antfile="build.xml" dir="${families_src_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+	<echo message="Copying micro services pet family to dist location"/>
     <copy todir="${families_dist}">
       <fileset dir="${families_src_build}/dist/"/>
-	  <fileset dir="${families_src_build}/exec_util/"/>
+      <fileset dir="${families_src_build}/exec_util/"/>
     </copy>
   </target>
   
@@ -117,12 +127,14 @@
   </target>
 
   <target name="colors_build" depends="colors_init" description="build and move the files to lib folder">
+    <echo message="Building micro services pet colors"/>
     <ant antfile="build.xml" dir="${colors_src_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+	<echo message="Copying micro services pet color to dist location"/>
     <copy todir="${colors_dist}">
       <fileset dir="${colors_src_build}/dist/"/>
-	  <fileset dir="${colors_src_build}/exec_util/"/>
+      <fileset dir="${colors_src_build}/exec_util/"/>
     </copy>
   </target>
 
@@ -132,12 +144,14 @@
   </target>
 
   <target name="clan_build" depends="clan_init" description="build and move the files to lib folder">
+    <echo message="Building micro services pet clan"/>
     <ant antfile="build.xml" dir="${clan_src_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+	<echo message="Copying micro services pet clan to dist location"/>
     <copy todir="${clan_dist}">
       <fileset dir="${clan_src_build}/dist/"/>
-	  <fileset dir="${clan_src_build}/exec_util/"/>
+      <fileset dir="${clan_src_build}/exec_util/"/>
     </copy>
   </target>
   
@@ -147,49 +161,116 @@
   </target>
 
   <target name="usage_metrics_build" depends="usage_metrics_init" description="build and move the files to lib folder">
+    <echo message="Building micro services usage metrics"/>
     <ant antfile="build.xml" dir="${usage_metrics_src_build}"
             inheritAll="true" inheritRefs="true" >
     </ant>
+	<echo message="Copying micro services usage metrics to dist location"/>
     <copy todir="${usage_metrics_dist}">
       <fileset dir="${usage_metrics_src_build}/dist/"/>
-	  <fileset dir="${usage_metrics_src_build}/exec_util/"/>
+      <fileset dir="${usage_metrics_src_build}/exec_util/"/>
     </copy>
   </target>  
   
   <!-- all -->
   <target name="all_build" depends="download,app_build,gateway_build,dao_build,families_build,colors_build,clan_build,usage_metrics_build" description="This task will build together"/>
 
-  <target name="docker_stop" depends="docker_build" description="This task to create image specified module based for docker">
+  <target name="docker_stop" description="This task to create image specified module based for docker">
+    <echo message="Stoping the docker service"/>
     <chmod file="${utilities}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
       <arg value="stop"/>
+      <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
   
   <target name="docker_build" depends="all_build" description="This task to create image specified module based for docker">
+    <echo message="building the docker service"/>
+    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
       <arg value="build"/>
+      <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
 
-  <target name="docker_start" depends="docker_stop" description="This task to create image specified module based for docker">
+  <target name="docker_start" depends="docker_build,docker_stop" description="This task to create image specified module based for docker">
+    <echo message="starting the docker service"/>
     <exec executable="/bin/bash">
       <arg value="${utilities}/docker/docker.sh"/>
-      <arg value="stop"/>
+      <arg value="start"/>
+      <arg value="all"/>
+      <arg value="${docker_source}"/>
     </exec>    
   </target>
   
-  <target name="unit_testcase_build">
-    <exec executable="/bin/bash">
-      <arg value="${utilities}/unit_tests/unit_test_case.sh"/>
-    </exec>
-  </target>
+  <target name="unit_test" depends="all_build">
+    <echo message="Gateway Unit Test"/>
+    <echo message=""/>
 
-  <target name="integration_testcase_build">
+    <echo message="Unit Test Started"/>
+
     <exec executable="/bin/bash">
-      <arg value="${utilities}/unit_tests/integration_test_case.sh"/>
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_colors.py"/>
     </exec>
-  </target>  
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_family.py"/>
+    </exec>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_services.py"/>
+    </exec>
+
+    <echo message=""/>    
+    <echo message="Integration Test Started"/>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/integration_test/integration.py"/>
+    </exec>
+
+  </target>
+  
+  <target name="test_case">
+    <echo message="Gateway Unit Test"/>
+    <echo message=""/>
+
+    <echo message="Unit Test Started"/>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_colors.py"/>
+    </exec>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_family.py"/>
+    </exec>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/unit_tests/test_services.py"/>
+    </exec>
+
+    <echo message=""/>    
+    <echo message="Integration Test Started"/>
+
+    <exec executable="/bin/bash">
+      <arg value="${script.location}unit_test.sh"/>
+      <arg value="python ${unit_test_case}/test_cases/integration_test/integration.py"/>
+    </exec>
+
+  </target> 
+  <target name="run" depends="docker_start,test_case">
+  </target>
+  <target name="info" depends="run">
+    <echo message=""/>
+  </target>
 </project>

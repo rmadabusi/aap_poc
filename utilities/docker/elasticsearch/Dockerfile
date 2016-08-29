@@ -12,17 +12,10 @@ RUN \
 
 # Copy elasticsearch.yml config
 COPY elasticsearch.yml /elasticsearch/config/elasticsearch.yml
-#COPY data/ /data
-
-RUN mkdir /data
-COPY data.tar.gz /data/
-WORKDIR /data/
-RUN tar -xvzf data.tar.gz
+COPY data/ /data
 
 # Expose ports. - 9200: HTTP - 9300: transport
 EXPOSE 9200 9300
-
-WORKDIR /elasticsearch
 
 # ENRETPOTINT TO start execution, when do run command
 ENTRYPOINT ["sh", "/elasticsearch/bin/elasticsearch", "-Des.insecure.allow.root=true"]
