@@ -140,7 +140,7 @@
 	</target>
 
 	<target name="if_unix" depends="checkos" if="isLinux">
-		<javac target="1.8" source="1.8" destdir="${build.dir}" debug="true" srcdir="${src.dir}" fork="yes" executable="/opt/java8/bin/javac" compiler="javac1.8" includeantruntime="false">
+		<javac target="1.8" source="1.8" destdir="${build.dir}" debug="true" srcdir="${src.dir}" fork="yes" compiler="javac1.8" includeantruntime="false">
 			<classpath refid="compile.classpath" />
 		</javac>
 		<echo message="Ant java version: ${ant.java.version}" />

@@ -4,13 +4,15 @@
 
   <target name="home_clean">
     <echo message="Cleaning the home directory."/>
-    <delete dir="${source}"/>
-    <delete dir="${temp}"/>
-    <delete dir="${target}"/>
+	<delete dir="${temp}"/>
   </target>
 
   <target name="init" depends="home_clean">
     <echo message="Setup enviornment"/>
+    <chmod file="${utilities}${main.script}" perm="755"/>
+    <chmod file="${utilities}backup_v1.sh" perm="755"/>
+    <chmod file="${utilities}clone_v1.sh" perm="755"/>
+    <chmod file="${utilities}clean_v1.sh" perm="755"/>
     <mkdir dir="${archives}"/>
     <mkdir dir="${source}"/>
     <mkdir dir="${temp}"/>
@@ -18,6 +20,10 @@
 
   <target name="backup" depends="init" description="This will create backup for the existing source code">
     <echo message="Backup the source code and target."/>
+    <chmod file="${utilities}${main.script}" perm="755"/>
+    <chmod file="${utilities}backup_v1.sh" perm="755"/>
+    <chmod file="${utilities}clone_v1.sh" perm="755"/>
+    <chmod file="${utilities}clean_v1.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -33,16 +39,24 @@
   </target>
 
   <target name="clean" description="This will clean the source code directory.">
+    <chmod file="${utilities}${main.script}" perm="755"/>
+    <chmod file="${utilities}backup_v1.sh" perm="755"/>
+    <chmod file="${utilities}clone_v1.sh" perm="755"/>
+    <chmod file="${utilities}clean_v1.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
-      <arg value="${source}"/>
+      <arg value="${target}"/>
       <arg value="1"/>
     </exec>
   </target>
 
   <target name="clone" description="This will clone the project from the git location">
     <echo message="Clone the code from github repository."/>
+    <chmod file="${utilities}${main.script}" perm="755"/>
+    <chmod file="${utilities}backup_v1.sh" perm="755"/>
+    <chmod file="${utilities}clone_v1.sh" perm="755"/>
+    <chmod file="${utilities}clean_v1.sh" perm="755"/>
     <exec executable="/bin/bash">
       <arg value="${script.location}${main.script}"/>
       <arg value="${script.location}"/>
@@ -54,7 +68,7 @@
     </copy>
   </target>
 
-  <target name="download" depends="backup,clean,clone" description="This will do backup, clean and clone together"/>
+  <target name="download" depends="backup,clone,clean" description="This will do backup, clean and clone together"/>
   
   <!-- Front-end Code" -->
   <target name="app_init" description="Creating executable folder">
@@ -177,36 +191,40 @@
 
   <target name="docker_stop" description="This task to create image specified module based for docker">
     <echo message="Stoping the docker service"/>
-    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
+    <chmod file="${docker_target}/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="stop"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
   
   <target name="docker_build" depends="all_build" description="This task to create image specified module based for docker">
     <echo message="building the docker service"/>
-	<copy todir="${docker_target}">
+	<copy todir="${docker_source}">
+      <fileset dir="${docker_source}/micro_services/"/>
+    </copy>
+    <copy todir="${docker_target}">
       <fileset dir="${docker_source}"/>
     </copy>
-    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
+
+    <chmod file="${docker_target}/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="build"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
 
   <target name="docker_start" depends="docker_build,docker_stop" description="This task to create image specified module based for docker">
     <echo message="starting the docker service"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="start"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
   
