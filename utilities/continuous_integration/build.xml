@@ -191,12 +191,12 @@
 
   <target name="docker_stop" description="This task to create image specified module based for docker">
     <echo message="Stoping the docker service"/>
-    <chmod file="${utilities}/docker/docker.sh" perm="755"/>
+    <chmod file="${docker_target}/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${utilities}/docker.sh"/>
       <arg value="stop"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
   
@@ -209,22 +209,22 @@
       <fileset dir="${docker_source}"/>
     </copy>
 
-    <chmod file="${docker_target}/docker/docker.sh" perm="755"/>
+    <chmod file="${docker_target}/docker.sh" perm="755"/>
     <exec executable="/bin/bash">
-      <arg value="${docker_target}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="build"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
 
   <target name="docker_start" depends="docker_build,docker_stop" description="This task to create image specified module based for docker">
     <echo message="starting the docker service"/>
     <exec executable="/bin/bash">
-      <arg value="${utilities}/docker/docker.sh"/>
+      <arg value="${docker_target}/docker.sh"/>
       <arg value="start"/>
       <arg value="all"/>
-      <arg value="${docker_source}"/>
+      <arg value="${docker_target}"/>
     </exec>    
   </target>
   
