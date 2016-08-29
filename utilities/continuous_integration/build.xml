@@ -4,7 +4,6 @@
 
   <target name="home_clean">
     <echo message="Cleaning the home directory."/>
-    <delete dir="${source}"/>
     <delete dir="${temp}"/>
     <delete dir="${target}"/>
   </target>
